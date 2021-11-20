@@ -1,6 +1,8 @@
 #%%
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
+import scipy.stats
 poke = pd.read_csv('pokedex.csv')
 
 #%%
@@ -28,7 +30,6 @@ fairy_types = poke.loc[poke['type_1'] == "Fair"]
 
 #%%
 # fire types data analytics
-
 gen1_fire = fire_types.loc[fire_types['generation'] == 1]
 gen2_fire = fire_types.loc[fire_types['generation'] == 2]
 gen3_fire = fire_types.loc[fire_types['generation'] == 3]
@@ -39,11 +40,36 @@ gen7_fire = fire_types.loc[fire_types['generation'] == 7]
 gen8_fire = fire_types.loc[fire_types['generation'] == 8]
 
 stats_gen1_fire = gen1_fire.describe()
+stats_gen2_fire = gen2_fire.describe()
+stats_gen3_fire = gen3_fire.describe()
+stats_gen4_fire = gen4_fire.describe()
+stats_gen5_fire = gen5_fire.describe()
+stats_gen6_fire = gen6_fire.describe()
+stats_gen7_fire = gen7_fire.describe()
+stats_gen8_fire = gen8_fire.describe()
 
+#%%
+# central limit theorem for attack
+cli_attack = poke['attack']
+
+# replace a with any of the following line to see different distributions
+# a = np.random.randn(10**6)*5 +  175;
+
+
+# mean of each column
+
+# sampleMean = np.mean(cli_attack, axis=0)
+
+# plt.hist(sampleMean)
+# plt.hist(sampleMean)
+
+# plotting bell curve for fire types
 plt.figure()
+
 plt.title("Fire Type pokemon base stats for Generation 1")
-gen1_fire.plot(x='pokedex_number', y='total_points', kind='scatter')
+plt.hist(cli_attack)
 plt.show()
+
 
 #%%
 # you can also read in by the chunk size incase your data set is extremely large
