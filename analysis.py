@@ -206,7 +206,7 @@ plt.show()
 
 
 #%%
-
+## Getting Dragon and Non Dragon Types and collecting their heights
 not_dragon_type = poke.loc[(poke['type_1'] != "Dragon") & (poke['type_2'] != "Dragon")]
 num_pokemon = len(poke)
 not_dragon_type_height = not_dragon_type['height_m']
@@ -214,6 +214,7 @@ dragon_type_height = dragon_types['height_m']
 
 
 #%%
+## Displaying height (m) distribution
 counts = plt.hist(height, bins=100)
 plt.xlabel('Height (m)')
 plt.ylabel('Frequency')
@@ -221,6 +222,8 @@ plt.title('Pokemon Height Distribution')
 plt.show()
 
 #%%
+## PMF For height of all Pokemon
+
 bin_center = (counts[1][1:]+counts[1][:-1])/2
 plt.bar(bin_center, (counts[0]/sum(counts[0])), width=.2)
 plt.xlabel('Pokemon Height (m)')
@@ -233,6 +236,7 @@ plt.show()
 # print('counts: ', counts[0])
 # print('len(counts): ', len(counts[0]))
 #%%
+## PMF For height of Dragon vs Not Dragon Pokemon
 dragon_counts = plt.hist(dragon_type_height, bins=counts[1])
 plt.close() # do not show fig; we just need counts from the hist func
 not_dragon_counts = plt.hist(not_dragon_type_height, bins=counts[1])
@@ -249,7 +253,8 @@ plt.legend(('Dragon Type', 'Not Dragon Type'))
 plt.show()
 
 #%%
-
+## Forgot what this type of graph is called but shows the probability dist (going down = more likely to be not Dragon
+## and going up means more likely to be a Dragon)
 plt.bar(bin_center, dragon_counts[0]/len(dragon_types) - not_dragon_counts[0]/len(not_dragon_type))
 plt.xlabel('Height (m)')
 plt.ylabel('P[Dragon] - P[Not Dragon]')
@@ -298,8 +303,10 @@ plt.ylabel('P(height $\leq$ x)')
 plt.show()
 
 # %%
-## Using standard normal distrubtion for quick probabilty estimation for all pokemon
-### how many heights are less than 7
+## Using standard normal distrubtion for quick probabilty estimation for all pokemon heights (m) and weights (kg)
+print(height_stats)
+print("\n")
+### how many heights are less than 7 meters
 p = scipy.stats.norm.cdf(7)
 expected = p * len(height)
 observed = (height < 7).sum()
@@ -307,7 +314,7 @@ print('# expected: %d / %d' % (expected, len(height)))
 print('# observed: %d / %d' % (observed, len(height)))
 
 #%%
-### How many heights are between 5 and 15?
+### How many heights are between 2 and 15 meters?
 p = scipy.stats.norm.cdf(15) - scipy.stats.norm.cdf(2)
 expected = p * len(height)
 observed = ((height < 15) & (height > 2)).sum()
@@ -316,7 +323,7 @@ print('# expected: %d / %d' % (expected, len(height)))
 print('# observed: %d / %d' % (observed, len(height)))
 
 #%%
-### How many heights are greater than 2?
+### How many heights are greater than 2 meters?
 p = 1 - scipy.stats.norm.cdf(2)
 
 expected = p * len(height)
@@ -341,7 +348,7 @@ p = scipy.stats.norm.cdf(high) - scipy.stats.norm.cdf(low)
 print('Answer: %.2f %%' % (100 * p))
 
 #%%
-### what percentage of the Pokemon population is heavier than 50kg
+### what percentage of the Pokemon population is heavier than 50kg?
 
 test_low = 50
 
@@ -352,8 +359,35 @@ mean_w = weight_stats.loc['mean']
 low = (test_low - mean_w) / std_dev_w
 p = 1 - scipy.stats.norm.cdf(low)
 print('Answer: %.2f %%' % (100 * p))
+#%%
+### what percentage of the Pokemon population is heavier than 100kg?
+test_low = 100
+
+std_dev_w = weight_stats.loc['std']
+mean_w = weight_stats.loc['mean']
+
+# more accurate estimate than just regular min and max
+low = (test_low - mean_w) / std_dev_w
+p = 1 - scipy.stats.norm.cdf(low)
+print('Answer: %.2f %%' % (100 * p))
+
+#%%
+## Verifying estimations with real data
+### What percentage of Pokemon are taller than 2.66807m
 
 
+n = (height > 2.66807).sum()
+p = n / len(height)
+print(f'Actual: {n}/{len(height)} = {round( 100*p ,3) }%')
+print(f'Theory: {round( (100 * (1 - scipy.stats.norm.cdf(1))) ,3)}%')
+
+#%%
+### What percentage of Pokemon are heavier than 75kg
+
+n = (weight > 75).sum()
+p = n / len(weight)
+print(f'Actual: {n}/{len(weight)} = {round( 100*p ,3) }%')
+print(f'Theory: {round( (100*(1 - scipy.stats.norm.cdf(4))) ,3)}%')
 
 #%%
 # you can also read in by the chunk size incase your data set is extremely large
