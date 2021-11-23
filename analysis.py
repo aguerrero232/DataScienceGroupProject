@@ -235,6 +235,7 @@ plt.show()
 # print('len(bin bondaries): ', len(counts[1]))
 # print('counts: ', counts[0])
 # print('len(counts): ', len(counts[0]))
+
 #%%
 ## PMF For height of Dragon vs Not Dragon Pokemon
 dragon_counts = plt.hist(dragon_type_height, bins=counts[1])
@@ -304,23 +305,27 @@ plt.show()
 
 # %%
 ## Using standard normal distrubtion for quick probabilty estimation for all pokemon heights (m) and weights (kg)
-print(height_stats)
+# print(height_stats)
+print("Using standard normal distrubtion for quick probabilty estimation for all pokemon heights (m) and weights (kg)")
 print("\n")
-### how many heights are less than 7 meters
+### how many Pokemon heights are less than 7 meters
+print("how many Pokemon heights are less than 7 meters")
 p = scipy.stats.norm.cdf(7)
 expected = p * len(height)
 observed = (height < 7).sum()
 print('# expected: %d / %d' % (expected, len(height)))
 print('# observed: %d / %d' % (observed, len(height)))
+print("\n")
 
 #%%
 ### How many heights are between 2 and 15 meters?
 p = scipy.stats.norm.cdf(15) - scipy.stats.norm.cdf(2)
 expected = p * len(height)
 observed = ((height < 15) & (height > 2)).sum()
-
+print("How many heights are between 2 and 15 meters?")
 print('# expected: %d / %d' % (expected, len(height)))
 print('# observed: %d / %d' % (observed, len(height)))
+print("\n")
 
 #%%
 ### How many heights are greater than 2 meters?
@@ -329,8 +334,10 @@ p = 1 - scipy.stats.norm.cdf(2)
 expected = p * len(height)
 observed = (height > 2).sum()
 
+print("How many heights are greater than 2 meters?")
 print('# expected: %d / %d' % (expected, len(height)))
 print('# observed: %d / %d' % (observed, len(height)))
+print("\n")
 
 #%%
 ### What percentage of the Pokemon population is between 1 and 2 meters?
@@ -340,12 +347,13 @@ test_low = 1
 
 std_dev_h = height_stats.loc['std']
 mean_h = height_stats.loc['mean']
-
+print("What percentage of the Pokemon population is between 1 and 2 meters?")
 # more accurate estimate than just regular min and max
 high = (test_high - mean_h) / std_dev_h
 low = (test_low - mean_h) / std_dev_h
 p = scipy.stats.norm.cdf(high) - scipy.stats.norm.cdf(low)
 print('Answer: %.2f %%' % (100 * p))
+print("\n")
 
 #%%
 ### what percentage of the Pokemon population is heavier than 50kg?
@@ -354,11 +362,13 @@ test_low = 50
 
 std_dev_w = weight_stats.loc['std']
 mean_w = weight_stats.loc['mean']
-
+print("what percentage of the Pokemon population is heavier than 50kg?")
 # more accurate estimate than just regular min and max
 low = (test_low - mean_w) / std_dev_w
 p = 1 - scipy.stats.norm.cdf(low)
 print('Answer: %.2f %%' % (100 * p))
+print("\n")
+
 #%%
 ### what percentage of the Pokemon population is heavier than 100kg?
 test_low = 100
@@ -366,10 +376,12 @@ test_low = 100
 std_dev_w = weight_stats.loc['std']
 mean_w = weight_stats.loc['mean']
 
+print("what percentage of the Pokemon population is heavier than 100kg?")
 # more accurate estimate than just regular min and max
 low = (test_low - mean_w) / std_dev_w
 p = 1 - scipy.stats.norm.cdf(low)
 print('Answer: %.2f %%' % (100 * p))
+print("\n")
 
 #%%
 ## Verifying estimations with real data
@@ -378,16 +390,20 @@ print('Answer: %.2f %%' % (100 * p))
 
 n = (height > 2.66807).sum()
 p = n / len(height)
+print("What percentage of Pokemon are taller than 2.66807m  (mean + (1 std.dev.))")
 print(f'Actual: {n}/{len(height)} = {round( 100*p ,3) }%')
 print(f'Theory: {round( (100 * (1 - scipy.stats.norm.cdf(1))) ,3)}%')
+print("\n")
 
 #%%
 ### What percentage of Pokemon are heavier than 75kg
 
 n = (weight > 75).sum()
 p = n / len(weight)
+print("What percentage of Pokemon are heavier than 75kg")
 print(f'Actual: {n}/{len(weight)} = {round( 100*p ,3) }%')
 print(f'Theory: {round( (100*(1 - scipy.stats.norm.cdf(4))) ,3)}%')
+print("\n")
 
 #%%
 # you can also read in by the chunk size incase your data set is extremely large
