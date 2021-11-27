@@ -181,12 +181,12 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 142,Aerodactyl,1,0,0,0,Fossil Pokémon,2,Rock,Flying,1.8,59,3,Rock Head,Pressure,Unnerve,515,80,105,65,60,75,130,0.5,0.5,2,2,1,2,1,0.5,0,0.5,1,0.5,2,1,1,1,2,1
 142,Mega Aerodactyl,1,0,0,0,Fossil Pokémon,2,Rock,Flying,2.1,79,1,Tough Claws,,,615,80,135,85,70,95,150,0.5,0.5,2,2,1,2,1,0.5,0,0.5,1,0.5,2,1,1,1,2,1
 143,Snorlax,1,0,0,0,Sleeping Pokémon,1,Normal,,2.1,460,3,Immunity,Thick Fat,Gluttony,540,160,110,65,65,110,30,1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1
-144,Articuno,1,1,0,0,Freeze Pokémon,2,Ice,Flying,1.7,55.4,2,Pressure,,Snow Cloak,580,90,85,100,95,125,85,1,2,1,2,0.5,1,1,1,0,1,1,0.5,4,1,1,1,2,1
-145,Zapdos,1,1,0,0,Electric Pokémon,2,Electric,Flying,1.6,52.6,2,Pressure,,Static,580,90,90,85,125,90,100,1,1,1,1,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
-146,Moltres,1,1,0,0,Flame Pokémon,2,Fire,Flying,2,60,2,Pressure,,Flame Body,580,90,100,90,125,85,90,1,0.5,2,2,0.25,1,0.5,1,0,1,1,0.25,4,1,1,1,0.5,0.5
-147,Dratini,1,0,0,0,Dragon Pokémon,1,Dragon,,1.8,3.3,2,Shed Skin,,Marvel Scale,300,41,64,45,50,50,50,1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2
-148,Dragonair,1,0,0,0,Dragon Pokémon,1,Dragon,,4,16.5,2,Shed Skin,,Marvel Scale,420,61,84,65,70,70,70,1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2
-149,Dragonite,1,0,0,0,Dragon Pokémon,2,Dragon,Flying,2.2,210,2,Inner Focus,,Multiscale,600,91,134,95,100,100,80,1,0.5,0.5,1,0.25,4,0.5,1,0,1,1,0.5,2,1,2,1,1,2
+144,Articuno,1,0,1,0,Freeze Pokémon,2,Ice,Flying,1.7,55.4,2,Pressure,,Snow Cloak,580,90,85,100,95,125,85,1,2,1,2,0.5,1,1,1,0,1,1,0.5,4,1,1,1,2,1
+145,Zapdos,1,0,1,0,Electric Pokémon,2,Electric,Flying,1.6,52.6,2,Pressure,,Static,580,90,90,85,125,90,100,1,1,1,1,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
+146,Moltres,1,0,1,0,Flame Pokémon,2,Fire,Flying,2,60,2,Pressure,,Flame Body,580,90,100,90,125,85,90,1,0.5,2,2,0.25,1,0.5,1,0,1,1,0.25,4,1,1,1,0.5,0.5
+147,Dratini,1,1,0,0,Dragon Pokémon,1,Dragon,,1.8,3.3,2,Shed Skin,,Marvel Scale,300,41,64,45,50,50,50,1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2
+148,Dragonair,1,1,0,0,Dragon Pokémon,1,Dragon,,4,16.5,2,Shed Skin,,Marvel Scale,420,61,84,65,70,70,70,1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2
+149,Dragonite,1,1,0,0,Dragon Pokémon,2,Dragon,Flying,2.2,210,2,Inner Focus,,Multiscale,600,91,134,95,100,100,80,1,0.5,0.5,1,0.25,4,0.5,1,0,1,1,0.5,2,1,2,1,1,2
 150,Mewtwo,1,0,1,0,Genetic Pokémon,1,Psychic,,2,122,2,Pressure,,Unnerve,680,106,110,90,154,90,130,1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1
 150,Mega Mewtwo X,1,0,1,0,Genetic Pokémon,2,Psychic,Fighting,2.3,127,1,Steadfast,,,780,106,190,100,154,100,130,1,1,1,1,1,1,0.5,1,1,2,1,1,0.5,2,1,1,1,2
 150,Mega Mewtwo Y,1,0,1,0,Genetic Pokémon,1,Psychic,,1.5,33,1,Insomnia,,,780,106,150,70,194,120,140,1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1
@@ -288,13 +288,13 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 240,Magby,2,0,0,0,Live Coal Pokémon,1,Fire,,0.7,21.4,2,Flame Body,,Vital Spirit,365,45,75,37,70,55,83,1,0.5,2,1,0.5,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5
 241,Miltank,2,0,0,0,Milk Cow Pokémon,1,Normal,,1.2,75.5,3,Thick Fat,Scrappy,Sap Sipper,490,95,80,105,40,70,100,1,0.5,1,1,1,0.5,2,1,1,1,1,1,1,0,1,1,1,1
 242,Blissey,2,0,0,0,Happiness Pokémon,1,Normal,,1.5,46.8,3,Natural Cure,Serene Grace,Healer,540,255,10,10,75,135,55,1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1
-243,Raikou,2,1,0,0,Thunder Pokémon,1,Electric,,1.9,178,2,Pressure,,Inner Focus,580,90,85,75,115,100,115,1,1,1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1
-244,Entei,2,1,0,0,Volcano Pokémon,1,Fire,,2.1,198,2,Pressure,,Inner Focus,580,115,115,85,90,75,100,1,0.5,2,1,0.5,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5
-245,Suicune,2,1,0,0,Aurora Pokémon,1,Water,,2,187,2,Pressure,,Inner Focus,580,100,75,115,90,115,85,1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1
+243,Raikou,2,0,1,0,Thunder Pokémon,1,Electric,,1.9,178,2,Pressure,,Inner Focus,580,90,85,75,115,100,115,1,1,1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1
+244,Entei,2,0,1,0,Volcano Pokémon,1,Fire,,2.1,198,2,Pressure,,Inner Focus,580,115,115,85,90,75,100,1,0.5,2,1,0.5,0.5,1,1,2,1,1,0.5,2,1,1,1,0.5,0.5
+245,Suicune,2,0,1,0,Aurora Pokémon,1,Water,,2,187,2,Pressure,,Inner Focus,580,100,75,115,90,115,85,1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1
 246,Larvitar,2,0,0,0,Rock Skin Pokémon,2,Rock,Ground,0.6,72,2,Guts,,Sand Veil,300,50,64,50,45,50,41,0.5,0.5,4,0,4,2,2,0.25,2,0.5,1,1,0.5,1,1,1,2,1
 247,Pupitar,2,0,0,0,Hard Shell Pokémon,2,Rock,Ground,1.2,152,1,Shed Skin,,,410,70,84,70,65,70,51,0.5,0.5,4,0,4,2,2,0.25,2,0.5,1,1,0.5,1,1,1,2,1
-248,Tyranitar,2,0,0,0,Armor Pokémon,2,Rock,Dark,2,202,2,Sand Stream,,Unnerve,600,100,134,110,95,100,61,0.5,0.5,2,1,2,1,4,0.5,2,0.5,0,2,1,0.5,1,0.5,2,2
-248,Mega Tyranitar,2,0,0,0,Armor Pokémon,2,Rock,Dark,2.5,255,1,Sand Stream,,,700,100,164,150,95,120,71,0.5,0.5,2,1,2,1,4,0.5,2,0.5,0,2,1,0.5,1,0.5,2,2
+248,Tyranitar,2,1,0,0,Armor Pokémon,2,Rock,Dark,2,202,2,Sand Stream,,Unnerve,600,100,134,110,95,100,61,0.5,0.5,2,1,2,1,4,0.5,2,0.5,0,2,1,0.5,1,0.5,2,2
+248,Mega Tyranitar,2,1,0,0,Armor Pokémon,2,Rock,Dark,2.5,255,1,Sand Stream,,,700,100,164,150,95,120,71,0.5,0.5,2,1,2,1,4,0.5,2,0.5,0,2,1,0.5,1,0.5,2,2
 249,Lugia,2,0,1,0,Diving Pokémon,2,Psychic,Flying,5.2,216,2,Pressure,,Multiscale,680,106,90,130,90,154,110,1,1,1,2,0.5,2,0.25,1,0,1,0.5,1,2,2,1,2,1,1
 250,Ho-oh,2,0,1,0,Rainbow Pokémon,2,Fire,Flying,3.8,199,2,Pressure,,Regenerator,680,106,130,90,110,154,90,1,0.5,2,2,0.25,1,0.5,1,0,1,1,0.25,4,1,1,1,0.5,0.5
 251,Celebi,2,0,0,1,Time Travel Pokémon,2,Psychic,Grass,0.6,5,1,Natural Cure,,,600,100,100,100,100,100,100,1,2,0.5,0.5,0.5,2,0.5,2,0.5,2,0.5,4,1,2,1,2,1,1
@@ -443,15 +443,15 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 373,Mega Salamence,3,0,0,0,Dragon Pokémon,2,Dragon,Flying,1.8,112.6,1,Aerilate,,,700,95,145,130,120,90,120,1,0.5,0.5,1,0.25,4,0.5,1,0,1,1,0.5,2,1,2,1,1,2
 374,Beldum,3,0,0,0,Iron Ball Pokémon,2,Steel,Psychic,0.6,95.2,2,Clear Body,,Light Metal,300,40,55,80,35,60,30,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
 375,Metang,3,0,0,0,Iron Claw Pokémon,2,Steel,Psychic,1.2,202.5,2,Clear Body,,Light Metal,420,60,75,100,55,80,50,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
-376,Metagross,3,0,0,0,Iron Leg Pokémon,2,Steel,Psychic,1.6,550,2,Clear Body,,Light Metal,600,80,135,130,95,90,70,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
-376,Mega Metagross,3,0,0,0,Iron Leg Pokémon,2,Steel,Psychic,2.5,942.9,1,Tough Claws,,,700,80,145,150,105,110,110,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
-377,Regirock,3,1,0,0,Rock Peak Pokémon,1,Rock,,1.7,230,2,Clear Body,,Sturdy,580,80,100,200,50,100,50,0.5,0.5,2,1,2,1,2,0.5,2,0.5,1,1,1,1,1,1,2,1
-378,Regice,3,1,0,0,Iceberg Pokémon,1,Ice,,1.8,175,2,Clear Body,,Ice Body,580,80,50,100,100,200,50,1,2,1,1,1,0.5,2,1,1,1,1,1,2,1,1,1,2,1
-379,Registeel,3,1,0,0,Iron Pokémon,1,Steel,,1.9,205,2,Clear Body,,Light Metal,580,80,75,150,75,150,50,0.5,2,1,1,0.5,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5
-380,Latias,3,1,0,0,Eon Pokémon,2,Dragon,Psychic,1.4,40,1,Levitate,,,600,80,80,90,110,130,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
-380,Mega Latias,3,1,0,0,Eon Pokémon,2,Dragon,Psychic,1.8,52,1,Levitate,,,700,80,100,120,140,150,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
-381,Latios,3,1,0,0,Eon Pokémon,2,Dragon,Psychic,2,60,1,Levitate,,,600,80,90,80,130,110,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
-381,Mega Latios,3,1,0,0,Eon Pokémon,2,Dragon,Psychic,2.3,70,1,Levitate,,,700,80,130,100,160,120,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
+376,Metagross,3,1,0,0,Iron Leg Pokémon,2,Steel,Psychic,1.6,550,2,Clear Body,,Light Metal,600,80,135,130,95,90,70,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
+376,Mega Metagross,3,1,0,0,Iron Leg Pokémon,2,Steel,Psychic,2.5,942.9,1,Tough Claws,,,700,80,145,150,105,110,110,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
+377,Regirock,3,0,1,0,Rock Peak Pokémon,1,Rock,,1.7,230,2,Clear Body,,Sturdy,580,80,100,200,50,100,50,0.5,0.5,2,1,2,1,2,0.5,2,0.5,1,1,1,1,1,1,2,1
+378,Regice,3,0,1,0,Iceberg Pokémon,1,Ice,,1.8,175,2,Clear Body,,Ice Body,580,80,50,100,100,200,50,1,2,1,1,1,0.5,2,1,1,1,1,1,2,1,1,1,2,1
+379,Registeel,3,0,1,0,Iron Pokémon,1,Steel,,1.9,205,2,Clear Body,,Light Metal,580,80,75,150,75,150,50,0.5,2,1,1,0.5,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5
+380,Latias,3,0,1,0,Eon Pokémon,2,Dragon,Psychic,1.4,40,1,Levitate,,,600,80,80,90,110,130,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
+380,Mega Latias,3,0,1,0,Eon Pokémon,2,Dragon,Psychic,1.8,52,1,Levitate,,,700,80,100,120,140,150,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
+381,Latios,3,0,1,0,Eon Pokémon,2,Dragon,Psychic,2,60,1,Levitate,,,600,80,90,80,130,110,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
+381,Mega Latios,3,0,1,0,Eon Pokémon,2,Dragon,Psychic,2.3,70,1,Levitate,,,700,80,130,100,160,120,110,1,0.5,0.5,0.5,0.5,2,0.5,1,0,1,0.5,2,1,2,2,2,1,2
 382,Kyogre,3,0,1,0,Sea Basin Pokémon,1,Water,,4.5,352,1,Drizzle,,,670,100,100,90,150,140,90,1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1
 382,Primal Kyogre,3,0,1,0,Sea Basin Pokémon,1,Water,,9.8,430,1,Primordial Sea,,,770,100,150,90,180,160,90,1,0,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1
 383,Groudon,3,0,1,0,Continent Pokémon,1,Ground,,3.5,950,1,Drought,,,670,100,150,140,100,90,90,1,1,2,0,2,2,1,0.5,1,1,1,1,0.5,1,1,1,1,1
@@ -524,7 +524,7 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 442,Spiritomb,4,0,0,0,Forbidden Pokémon,2,Ghost,Dark,1,108,2,Pressure,,Infiltrator,485,50,92,108,92,108,35,0,1,1,1,1,1,0,0.5,1,1,0,1,1,1,1,1,1,2
 443,Gible,4,0,0,0,Land Shark Pokémon,2,Dragon,Ground,0.7,20.5,2,Sand Veil,,Rough Skin,300,58,70,45,40,45,42,1,0.5,1,0,1,4,1,0.5,1,1,1,1,0.5,1,2,1,1,2
 444,Gabite,4,0,0,0,Cave Pokémon,2,Dragon,Ground,1.4,56,2,Sand Veil,,Rough Skin,410,68,90,65,50,55,82,1,0.5,1,0,1,4,1,0.5,1,1,1,1,0.5,1,2,1,1,2
-445,Garchomp,4,0,0,0,Mach Pokémon,2,Dragon,Ground,1.9,95,2,Sand Veil,,Rough Skin,600,108,130,95,80,85,102,1,0.5,1,0,1,4,1,0.5,1,1,1,1,0.5,1,2,1,1,2
+445,Garchomp,4,1,0,0,Mach Pokémon,2,Dragon,Ground,1.9,95,2,Sand Veil,,Rough Skin,600,108,130,95,80,85,102,1,0.5,1,0,1,4,1,0.5,1,1,1,1,0.5,1,2,1,1,2
 445,Mega Garchomp,4,0,0,0,Mach Pokémon,2,Dragon,Ground,1.9,95,1,Sand Force,,,700,108,170,115,120,95,92,1,0.5,1,0,1,4,1,0.5,1,1,1,1,0.5,1,2,1,1,2
 446,Munchlax,4,0,0,0,Big Eater Pokémon,1,Normal,,0.6,105,3,Pickup,Thick Fat,Gluttony,390,135,85,40,40,85,5,1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1
 447,Riolu,4,0,0,0,Emanation Pokémon,1,Fighting,,0.7,20.2,3,Steadfast,Inner Focus,Prankster,285,40,70,40,35,40,60,1,1,1,1,1,1,1,1,1,2,2,0.5,0.5,1,1,0.5,1,2
@@ -568,16 +568,16 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 479,Frost Rotom,4,0,0,0,Plasma Pokémon,2,Electric,Ice,0.3,0.3,1,Levitate,,,520,50,65,107,105,107,86,1,2,1,0.5,1,0.5,2,1,0,0.5,1,1,2,1,1,1,1,1
 479,Fan Rotom,4,0,0,0,Plasma Pokémon,2,Electric,Flying,0.3,0.3,1,Levitate,,,520,50,65,107,105,107,86,1,1,1,1,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
 479,Mow Rotom,4,0,0,0,Plasma Pokémon,2,Electric,Grass,0.3,0.3,1,Levitate,,,520,50,65,107,105,107,86,1,2,0.5,0.25,0.5,2,1,2,0,1,1,2,1,1,1,1,0.5,1
-480,Uxie,4,1,0,0,Knowledge Pokémon,1,Psychic,,0.3,0.3,1,Levitate,,,580,75,75,130,75,130,95,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
-481,Mesprit,4,1,0,0,Emotion Pokémon,1,Psychic,,0.3,0.3,1,Levitate,,,580,80,105,105,105,105,80,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
-482,Azelf,4,1,0,0,Willpower Pokémon,1,Psychic,,0.3,0.3,1,Levitate,,,580,75,125,70,125,70,115,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
+480,Uxie,4,0,1,0,Knowledge Pokémon,1,Psychic,,0.3,0.3,1,Levitate,,,580,75,75,130,75,130,95,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
+481,Mesprit,4,0,1,0,Emotion Pokémon,1,Psychic,,0.3,0.3,1,Levitate,,,580,80,105,105,105,105,80,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
+482,Azelf,4,0,1,0,Willpower Pokémon,1,Psychic,,0.3,0.3,1,Levitate,,,580,75,125,70,125,70,115,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
 483,Dialga,4,0,1,0,Temporal Pokémon,2,Steel,Dragon,5.4,683,2,Pressure,,Telepathy,680,100,120,120,150,100,90,0.5,1,0.5,0.5,0.25,1,2,0,2,0.5,0.5,0.5,0.5,1,1,1,0.5,1
 484,Palkia,4,0,1,0,Spatial Pokémon,2,Water,Dragon,4.2,336,2,Pressure,,Telepathy,680,90,120,100,150,120,100,1,0.25,0.25,1,1,1,1,1,1,1,1,1,1,1,2,1,0.5,2
-485,Heatran,4,1,0,0,Lava Dome Pokémon,2,Fire,Steel,1.7,430,2,Flash Fire,,Flame Body,600,91,90,106,130,106,77,0.5,0,2,1,0.25,0.25,2,0,4,0.5,0.5,0.25,1,1,0.5,1,0.25,0.25
-486,Regigigas,4,1,0,0,Colossal Pokémon,1,Normal,,3.7,420,1,Slow Start,,,670,110,160,110,80,110,100,1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1
+485,Heatran,4,0,1,0,Lava Dome Pokémon,2,Fire,Steel,1.7,430,2,Flash Fire,,Flame Body,600,91,90,106,130,106,77,0.5,0,2,1,0.25,0.25,2,0,4,0.5,0.5,0.25,1,1,0.5,1,0.25,0.25
+486,Regigigas,4,0,1,0,Colossal Pokémon,1,Normal,,3.7,420,1,Slow Start,,,670,110,160,110,80,110,100,1,1,1,1,1,1,2,1,1,1,1,1,1,0,1,1,1,1
 487,Giratina Altered Forme,4,0,1,0,Renegade Pokémon,2,Ghost,Dragon,4.5,750,2,Pressure,,Telepathy,680,150,100,120,100,120,90,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
 487,Giratina Origin Forme,4,0,1,0,Renegade Pokémon,2,Ghost,Dragon,6.9,650,1,Levitate,,,680,150,120,100,120,100,90,0,0.5,0.5,0.5,0.5,2,0,0.5,0,1,1,0.5,1,2,2,2,1,2
-488,Cresselia,4,1,0,0,Lunar Pokémon,1,Psychic,,1.5,85.6,1,Levitate,,,600,120,70,120,75,130,85,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
+488,Cresselia,4,0,1,0,Lunar Pokémon,1,Psychic,,1.5,85.6,1,Levitate,,,600,120,70,120,75,130,85,1,1,1,1,1,1,0.5,1,0,1,0.5,2,1,2,1,2,1,1
 489,Phione,4,0,0,1,Sea Drifter Pokémon,1,Water,,0.4,3.1,1,Hydration,,,480,80,80,80,80,80,80,1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1
 490,Manaphy,4,0,0,1,Seafaring Pokémon,1,Water,,0.3,1.4,1,Hydration,,,600,100,100,100,100,100,100,1,0.5,0.5,2,2,0.5,1,1,1,1,1,1,1,1,1,1,0.5,1
 491,Darkrai,4,0,0,1,Pitch-Black Pokémon,1,Dark,,1.5,50.5,1,Bad Dreams,,,600,70,90,90,135,90,125,1,1,1,1,1,1,2,1,1,1,0,2,1,0.5,1,0.5,1,2
@@ -733,20 +733,20 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 632,Durant,5,0,0,0,Iron Ant Pokémon,2,Bug,Steel,0.3,33,3,Swarm,Hustle,Truant,484,58,109,112,48,48,109,0.5,4,1,1,0.25,0.5,1,0,1,1,0.5,0.5,1,1,0.5,1,0.5,0.5
 633,Deino,5,0,0,0,Irate Pokémon,2,Dark,Dragon,0.8,17.3,1,Hustle,,,300,52,65,50,45,50,38,1,0.5,0.5,0.5,0.5,2,2,1,1,1,0,2,1,0.5,2,0.5,1,4
 634,Zweilous,5,0,0,0,Hostile Pokémon,2,Dark,Dragon,1.4,50,1,Hustle,,,420,72,85,70,65,70,58,1,0.5,0.5,0.5,0.5,2,2,1,1,1,0,2,1,0.5,2,0.5,1,4
-635,Hydreigon,5,0,0,0,Brutal Pokémon,2,Dark,Dragon,1.8,160,1,Levitate,,,600,92,105,90,125,90,98,1,0.5,0.5,0.5,0.5,2,2,1,0,1,0,2,1,0.5,2,0.5,1,4
+635,Hydreigon,5,1,0,0,Brutal Pokémon,2,Dark,Dragon,1.8,160,1,Levitate,,,600,92,105,90,125,90,98,1,0.5,0.5,0.5,0.5,2,2,1,0,1,0,2,1,0.5,2,0.5,1,4
 636,Larvesta,5,0,0,0,Torch Pokémon,2,Bug,Fire,1.1,28.8,2,Flame Body,,Swarm,360,55,85,55,50,55,60,1,1,2,1,0.25,0.5,0.5,1,1,2,1,0.5,4,1,1,1,0.5,0.5
 637,Volcarona,5,0,0,0,Sun Pokémon,2,Bug,Fire,1.6,46,2,Flame Body,,Swarm,550,85,60,65,135,105,100,1,1,2,1,0.25,0.5,0.5,1,1,2,1,0.5,4,1,1,1,0.5,0.5
-638,Cobalion,5,1,0,0,Iron Will Pokémon,2,Steel,Fighting,2.1,250,1,Justified,,,580,91,90,129,90,72,108,0.5,2,1,1,0.5,0.5,2,0,2,1,1,0.25,0.25,1,0.5,0.5,0.5,1
-639,Terrakion,5,1,0,0,Cavern Pokémon,2,Rock,Fighting,1.9,260,1,Justified,,,580,91,129,90,72,90,108,0.5,0.5,2,1,2,1,2,0.5,2,1,2,0.5,0.5,1,1,0.5,2,2
-640,Virizion,5,1,0,0,Grassland Pokémon,2,Grass,Fighting,2,200,1,Justified,,,580,91,90,72,90,129,108,1,2,0.5,0.5,0.5,2,1,2,0.5,4,2,1,0.5,1,1,0.5,1,2
-641,Tornadus Incarnate Forme,5,1,0,0,Cyclone Pokémon,1,Flying,,1.5,63,2,Prankster,,Defiant,580,79,115,70,125,80,111,1,1,1,2,0.5,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1
-641,Tornadus Therian Forme,5,1,0,0,Cyclone Pokémon,1,Flying,,1.4,63,1,Regenerator,,,580,79,100,80,110,90,121,1,1,1,2,0.5,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1
-642,Thundurus Incarnate Forme,5,1,0,0,Bolt Strike Pokémon,2,Electric,Flying,1.5,61,2,Prankster,,Defiant,580,79,115,70,125,80,111,1,1,1,1,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
-642,Thundurus Therian Forme,5,1,0,0,Bolt Strike Pokémon,2,Electric,Flying,3,61,1,Volt Absorb,,,580,79,105,70,145,80,101,1,1,1,0,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
+638,Cobalion,5,0,1,0,Iron Will Pokémon,2,Steel,Fighting,2.1,250,1,Justified,,,580,91,90,129,90,72,108,0.5,2,1,1,0.5,0.5,2,0,2,1,1,0.25,0.25,1,0.5,0.5,0.5,1
+639,Terrakion,5,0,1,0,Cavern Pokémon,2,Rock,Fighting,1.9,260,1,Justified,,,580,91,129,90,72,90,108,0.5,0.5,2,1,2,1,2,0.5,2,1,2,0.5,0.5,1,1,0.5,2,2
+640,Virizion,5,0,1,0,Grassland Pokémon,2,Grass,Fighting,2,200,1,Justified,,,580,91,90,72,90,129,108,1,2,0.5,0.5,0.5,2,1,2,0.5,4,2,1,0.5,1,1,0.5,1,2
+641,Tornadus Incarnate Forme,5,0,1,0,Cyclone Pokémon,1,Flying,,1.5,63,2,Prankster,,Defiant,580,79,115,70,125,80,111,1,1,1,2,0.5,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1
+641,Tornadus Therian Forme,5,0,1,0,Cyclone Pokémon,1,Flying,,1.4,63,1,Regenerator,,,580,79,100,80,110,90,121,1,1,1,2,0.5,2,0.5,1,0,1,1,0.5,2,1,1,1,1,1
+642,Thundurus Incarnate Forme,5,0,1,0,Bolt Strike Pokémon,2,Electric,Flying,1.5,61,2,Prankster,,Defiant,580,79,115,70,125,80,111,1,1,1,1,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
+642,Thundurus Therian Forme,5,0,1,0,Bolt Strike Pokémon,2,Electric,Flying,3,61,1,Volt Absorb,,,580,79,105,70,145,80,101,1,1,1,0,0.5,2,0.5,1,0,0.5,1,0.5,2,1,1,1,0.5,1
 643,Reshiram,5,0,1,0,Vast White Pokémon,2,Dragon,Fire,3.2,330,1,Turboblaze,,,680,100,120,100,150,120,90,1,0.25,1,0.5,0.25,1,1,1,2,1,1,0.5,2,1,2,1,0.5,1
 644,Zekrom,5,0,1,0,Deep Black Pokémon,2,Dragon,Electric,2.9,345,1,Teravolt,,,680,100,150,120,120,100,90,1,0.5,0.5,0.25,0.5,2,1,1,2,0.5,1,1,1,1,2,1,0.5,2
-645,Landorus Incarnate Forme,5,1,0,0,Abundance Pokémon,2,Ground,Flying,1.5,68,2,Sand Force,,Sheer Force,600,89,125,90,115,80,101,1,1,2,0,1,4,0.5,0.5,0,1,1,0.5,1,1,1,1,1,1
-645,Landorus Therian Forme,5,1,0,0,Abundance Pokémon,2,Ground,Flying,1.3,68,1,Intimidate,,,600,89,145,90,105,80,91,1,1,2,0,1,4,0.5,0.5,0,1,1,0.5,1,1,1,1,1,1
+645,Landorus Incarnate Forme,5,0,1,0,Abundance Pokémon,2,Ground,Flying,1.5,68,2,Sand Force,,Sheer Force,600,89,125,90,115,80,101,1,1,2,0,1,4,0.5,0.5,0,1,1,0.5,1,1,1,1,1,1
+645,Landorus Therian Forme,5,0,1,0,Abundance Pokémon,2,Ground,Flying,1.3,68,1,Intimidate,,,600,89,145,90,105,80,91,1,1,2,0,1,4,0.5,0.5,0,1,1,0.5,1,1,1,1,1,1
 646,Kyurem,5,0,1,0,Boundary Pokémon,2,Dragon,Ice,3,325,1,Pressure,,,660,125,130,90,130,90,95,1,1,0.5,0.5,0.5,1,2,1,1,1,1,1,2,1,2,1,2,2
 646,Black Kyurem,5,0,1,0,Boundary Pokémon,2,Dragon,Ice,3.3,325,1,Teravolt,,,700,125,170,100,120,90,95,1,1,0.5,0.5,0.5,1,2,1,1,1,1,1,2,1,2,1,2,2
 646,White Kyurem,5,0,1,0,Boundary Pokémon,2,Dragon,Ice,3.6,325,1,Turboblaze,,,700,125,120,90,170,100,95,1,1,0.5,0.5,0.5,1,2,1,1,1,1,1,2,1,2,1,2,2
@@ -814,7 +814,7 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 703,Carbink,6,0,0,0,Jewel Pokémon,2,Rock,Fairy,0.3,5.7,2,Clear Body,,Sturdy,500,50,50,150,50,150,50,0.5,0.5,2,1,2,1,1,1,2,0.5,1,0.5,1,1,0,0.5,4,1
 704,Goomy,6,0,0,0,Soft Tissue Pokémon,1,Dragon,,0.3,2.8,3,Sap Sipper,Hydration,Gooey,300,45,50,35,55,75,40,1,0.5,0.5,0.5,0,2,1,1,1,1,1,1,1,1,2,1,1,2
 705,Sliggoo,6,0,0,0,Soft Tissue Pokémon,1,Dragon,,0.8,17.5,3,Sap Sipper,Hydration,Gooey,452,68,75,53,83,113,60,1,0.5,0.5,0.5,0,2,1,1,1,1,1,1,1,1,2,1,1,2
-706,Goodra,6,0,0,0,Dragon Pokémon,1,Dragon,,2,150.5,3,Sap Sipper,Hydration,Gooey,600,90,100,70,110,150,80,1,0.5,0.5,0.5,0,2,1,1,1,1,1,1,1,1,2,1,1,2
+706,Goodra,6,1,0,0,Dragon Pokémon,1,Dragon,,2,150.5,3,Sap Sipper,Hydration,Gooey,600,90,100,70,110,150,80,1,0.5,0.5,0.5,0,2,1,1,1,1,1,1,1,1,2,1,1,2
 707,Klefki,6,0,0,0,Key Ring Pokémon,2,Steel,Fairy,0.2,3,2,Prankster,,Magician,470,57,80,91,80,87,75,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.5,0.25,0.5,1,0,0.5,1,0.5
 708,Phantump,6,0,0,0,Stump Pokémon,2,Ghost,Grass,0.4,7,3,Natural Cure,Frisk,Harvest,309,43,70,48,50,60,38,0,2,0.5,0.5,0.5,2,0,1,0.5,2,1,1,1,2,1,2,1,1
 709,Trevenant,6,0,0,0,Elder Tree Pokémon,2,Ghost,Grass,1.5,71,3,Natural Cure,Frisk,Harvest,474,85,110,76,65,82,56,0,2,0.5,0.5,0.5,2,0,1,0.5,2,1,1,1,2,1,2,1,1
@@ -910,32 +910,32 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 781,Dhelmise,7,0,0,0,Sea Creeper Pokémon,2,Ghost,Grass,3.9,210,1,Steelworker,,,517,70,131,100,86,90,40,0,2,0.5,0.5,0.5,2,0,1,0.5,2,1,1,1,2,1,2,1,1
 782,Jangmo-o,7,0,0,0,Scaly Pokémon,1,Dragon,,0.6,29.7,3,Bulletproof,Soundproof,Overcoat,300,45,55,65,45,45,45,1,0.5,0.5,0.5,0.5,2,1,1,1,1,1,1,1,1,2,1,1,2
 783,Hakamo-o,7,0,0,0,Scaly Pokémon,2,Dragon,Fighting,1.2,47,3,Bulletproof,Soundproof,Overcoat,420,55,75,90,65,70,65,1,0.5,0.5,0.5,0.5,2,1,1,1,2,2,0.5,0.5,1,2,0.5,1,4
-784,Kommo-o,7,0,0,0,Scaly Pokémon,2,Dragon,Fighting,1.6,78.2,3,Bulletproof,Soundproof,Overcoat,600,75,110,125,100,105,85,1,0.5,0.5,0.5,0.5,2,1,1,1,2,2,0.5,0.5,1,2,0.5,1,4
-785,Tapu Koko,7,1,0,0,Land Spirit Pokémon,2,Electric,Fairy,1.8,20.5,2,Electric Surge,,Telepathy,570,70,115,85,95,75,130,1,1,1,0.5,1,1,0.5,2,2,0.5,1,0.5,1,1,0,0.5,1,1
-786,Tapu Lele,7,1,0,0,Land Spirit Pokémon,2,Psychic,Fairy,1.2,18.6,2,Psychic Surge,,Telepathy,570,70,85,75,130,115,95,1,1,1,1,1,1,0.25,2,1,1,0.5,1,1,2,0,1,2,1
-787,Tapu Bulu,7,1,0,0,Land Spirit Pokémon,2,Grass,Fairy,1.9,45.5,2,Grassy Surge,,Telepathy,570,70,130,115,85,95,75,1,2,0.5,0.5,0.5,2,0.5,4,0.5,2,1,1,1,1,0,0.5,2,1
-788,Tapu Fini,7,1,0,0,Land Spirit Pokémon,2,Water,Fairy,1.3,21.2,2,Misty Surge,,Telepathy,570,70,75,115,95,130,85,1,0.5,0.5,2,2,0.5,0.5,2,1,1,1,0.5,1,1,0,0.5,1,1
+784,Kommo-o,7,1,0,0,Scaly Pokémon,2,Dragon,Fighting,1.6,78.2,3,Bulletproof,Soundproof,Overcoat,600,75,110,125,100,105,85,1,0.5,0.5,0.5,0.5,2,1,1,1,2,2,0.5,0.5,1,2,0.5,1,4
+785,Tapu Koko,7,0,1,0,Land Spirit Pokémon,2,Electric,Fairy,1.8,20.5,2,Electric Surge,,Telepathy,570,70,115,85,95,75,130,1,1,1,0.5,1,1,0.5,2,2,0.5,1,0.5,1,1,0,0.5,1,1
+786,Tapu Lele,7,0,1,0,Land Spirit Pokémon,2,Psychic,Fairy,1.2,18.6,2,Psychic Surge,,Telepathy,570,70,85,75,130,115,95,1,1,1,1,1,1,0.25,2,1,1,0.5,1,1,2,0,1,2,1
+787,Tapu Bulu,7,0,1,0,Land Spirit Pokémon,2,Grass,Fairy,1.9,45.5,2,Grassy Surge,,Telepathy,570,70,130,115,85,95,75,1,2,0.5,0.5,0.5,2,0.5,4,0.5,2,1,1,1,1,0,0.5,2,1
+788,Tapu Fini,7,0,1,0,Land Spirit Pokémon,2,Water,Fairy,1.3,21.2,2,Misty Surge,,Telepathy,570,70,75,115,95,130,85,1,0.5,0.5,2,2,0.5,0.5,2,1,1,1,0.5,1,1,0,0.5,1,1
 789,Cosmog,7,0,1,0,Nebula Pokémon,1,Psychic,,0.2,0.1,1,Unaware,,,200,43,29,31,29,31,37,1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1
 790,Cosmoem,7,0,1,0,Protostar Pokémon,1,Psychic,,0.1,999.9,1,Sturdy,,,400,43,29,131,29,131,37,1,1,1,1,1,1,0.5,1,1,1,0.5,2,1,2,1,2,1,1
 791,Solgaleo,7,0,1,0,Sunne Pokémon,2,Psychic,Steel,3.4,230,1,Full Metal Body,,,680,137,137,107,113,89,97,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.25,1,0.5,2,0.5,2,0.5,0.5
 792,Lunala,7,0,1,0,Moone Pokémon,2,Psychic,Ghost,4,120,1,Shadow Shield,,,680,137,113,89,137,107,97,0,1,1,1,1,1,0,0.5,1,1,0.5,1,1,4,1,4,1,1
-793,Nihilego,7,1,0,0,Parasite Pokémon,2,Rock,Poison,1.2,55.5,1,Beast Boost,,,570,109,53,47,127,131,103,0.5,0.5,2,1,1,1,1,0.25,4,0.5,2,0.5,1,1,1,1,2,0.5
-794,Buzzwole,7,1,0,0,Swollen Pokémon,2,Bug,Fighting,2.4,333.6,1,Beast Boost,,,570,107,139,139,53,53,79,1,2,1,1,0.5,1,0.5,1,0.5,4,2,0.5,1,1,1,0.5,1,2
-795,Pheromosa,7,1,0,0,Lissome Pokémon,2,Bug,Fighting,1.8,25,1,Beast Boost,,,570,71,137,37,137,37,151,1,2,1,1,0.5,1,0.5,1,0.5,4,2,0.5,1,1,1,0.5,1,2
-796,Xurkitree,7,1,0,0,Glowing Pokémon,1,Electric,,3.8,100,1,Beast Boost,,,570,83,89,71,173,71,83,1,1,1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1
-797,Celesteela,7,1,0,0,Launch Pokémon,2,Steel,Flying,9.2,999.9,1,Beast Boost,,,570,97,101,103,107,101,61,0.5,2,1,2,0.25,1,1,0,0,0.5,0.5,0.25,1,1,0.5,1,0.5,0.5
-798,Kartana,7,1,0,0,Drawn Sword Pokémon,2,Grass,Steel,0.3,0.1,1,Beast Boost,,,570,59,181,131,59,31,109,0.5,4,0.5,0.5,0.25,1,2,0,1,1,0.5,1,0.5,1,0.5,1,0.5,0.5
-799,Guzzlord,7,1,0,0,Junkivore Pokémon,2,Dark,Dragon,5.5,888,1,Beast Boost,,,570,223,101,53,97,53,43,1,0.5,0.5,0.5,0.5,2,2,1,1,1,0,2,1,0.5,2,0.5,1,4
+793,Nihilego,7,0,1,0,Parasite Pokémon,2,Rock,Poison,1.2,55.5,1,Beast Boost,,,570,109,53,47,127,131,103,0.5,0.5,2,1,1,1,1,0.25,4,0.5,2,0.5,1,1,1,1,2,0.5
+794,Buzzwole,7,0,1,0,Swollen Pokémon,2,Bug,Fighting,2.4,333.6,1,Beast Boost,,,570,107,139,139,53,53,79,1,2,1,1,0.5,1,0.5,1,0.5,4,2,0.5,1,1,1,0.5,1,2
+795,Pheromosa,7,0,1,0,Lissome Pokémon,2,Bug,Fighting,1.8,25,1,Beast Boost,,,570,71,137,37,137,37,151,1,2,1,1,0.5,1,0.5,1,0.5,4,2,0.5,1,1,1,0.5,1,2
+796,Xurkitree,7,0,1,0,Glowing Pokémon,1,Electric,,3.8,100,1,Beast Boost,,,570,83,89,71,173,71,83,1,1,1,0.5,1,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1
+797,Celesteela,7,0,1,0,Launch Pokémon,2,Steel,Flying,9.2,999.9,1,Beast Boost,,,570,97,101,103,107,101,61,0.5,2,1,2,0.25,1,1,0,0,0.5,0.5,0.25,1,1,0.5,1,0.5,0.5
+798,Kartana,7,0,1,0,Drawn Sword Pokémon,2,Grass,Steel,0.3,0.1,1,Beast Boost,,,570,59,181,131,59,31,109,0.5,4,0.5,0.5,0.25,1,2,0,1,1,0.5,1,0.5,1,0.5,1,0.5,0.5
+799,Guzzlord,7,0,1,0,Junkivore Pokémon,2,Dark,Dragon,5.5,888,1,Beast Boost,,,570,223,101,53,97,53,43,1,0.5,0.5,0.5,0.5,2,2,1,1,1,0,2,1,0.5,2,0.5,1,4
 800,Necrozma,7,0,1,0,Prism Pokémon,1,Psychic,,2.4,230,1,Prism Armor,,,600,97,107,101,127,89,79,1,1,1,1,1,1,0.5,1,1,1,0.5,1.5,1,1.5,1,1.5,1,1
 800,Dusk Mane Necrozma,7,0,1,0,Prism Pokémon,2,Psychic,Steel,3.8,460,1,Prism Armor,,,680,97,157,127,113,109,77,0.5,1.5,1,1,0.5,0.5,1,0,1.5,0.5,0.25,1,0.5,1.5,0.5,1.5,0.5,0.5
 800,Dawn Wings Necrozma,7,0,1,0,Prism Pokémon,2,Psychic,Ghost,4.2,350,1,Prism Armor,,,680,97,113,109,157,127,77,0,1,1,1,1,1,0,0.5,1,1,0.5,1,1,3,1,3,1,1
 800,Ultra Necrozma,7,0,1,0,Prism Pokémon,2,Psychic,Dragon,7.5,230,1,Neuroforce,,,754,97,167,97,167,97,129,1,0.5,0.5,0.5,0.5,2,0.5,1,1,1,0.5,2,1,2,2,2,1,2
 801,Magearna,7,0,0,1,Artificial Pokémon,2,Steel,Fairy,1,80.5,1,Soul-Heart,,,600,80,95,115,130,115,65,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.5,0.25,0.5,1,0,0.5,1,0.5
 802,Marshadow,7,0,0,1,Gloomdweller Pokémon,2,Fighting,Ghost,0.7,22.2,1,Technician,,,600,90,125,80,90,90,125,0,1,1,1,1,1,0,0.5,1,2,2,0.25,0.5,2,1,1,1,2
-803,Poipole,7,1,0,0,Poison Pin Pokémon,1,Poison,,0.6,1.8,1,Beast Boost,,,420,67,73,67,73,67,73,1,1,1,1,0.5,1,0.5,0.5,2,1,2,0.5,1,1,1,1,1,0.5
-804,Naganadel,7,1,0,0,Poison Pin Pokémon,2,Poison,Dragon,3.6,150,1,Beast Boost,,,540,73,73,73,127,73,121,1,0.5,0.5,0.5,0.25,2,0.5,0.5,2,1,2,0.5,1,1,2,1,1,1
-805,Stakataka,7,1,0,0,Rampart Pokémon,2,Rock,Steel,5.5,820,1,Beast Boost,,,570,61,131,211,53,101,13,0.25,1,2,1,1,0.5,4,0,4,0.25,0.5,0.5,0.5,1,0.5,1,1,0.5
-806,Blacephalon,7,1,0,0,Fireworks Pokémon,2,Fire,Ghost,1.8,13,1,Beast Boost,,,570,53,127,53,151,79,107,0,0.5,2,1,0.5,0.5,0,0.5,2,1,1,0.25,2,2,1,2,0.5,0.5
+803,Poipole,7,0,1,0,Poison Pin Pokémon,1,Poison,,0.6,1.8,1,Beast Boost,,,420,67,73,67,73,67,73,1,1,1,1,0.5,1,0.5,0.5,2,1,2,0.5,1,1,1,1,1,0.5
+804,Naganadel,7,0,1,0,Poison Pin Pokémon,2,Poison,Dragon,3.6,150,1,Beast Boost,,,540,73,73,73,127,73,121,1,0.5,0.5,0.5,0.25,2,0.5,0.5,2,1,2,0.5,1,1,2,1,1,1
+805,Stakataka,7,0,1,0,Rampart Pokémon,2,Rock,Steel,5.5,820,1,Beast Boost,,,570,61,131,211,53,101,13,0.25,1,2,1,1,0.5,4,0,4,0.25,0.5,0.5,0.5,1,0.5,1,1,0.5
+806,Blacephalon,7,0,1,0,Fireworks Pokémon,2,Fire,Ghost,1.8,13,1,Beast Boost,,,570,53,127,53,151,79,107,0,0.5,2,1,0.5,0.5,0,0.5,2,1,1,0.25,2,2,1,2,0.5,0.5
 807,Zeraora,7,0,0,1,Thunderclap Pokémon,1,Electric,,1.5,44.5,1,Volt Absorb,,,600,88,112,75,102,80,143,1,1,1,0,1,1,1,1,2,0.5,1,1,1,1,1,1,0.5,1
 808,Meltan,7,0,0,1,Hex Nut Pokémon,1,Steel,,0.2,8,1,Magnet Pull,,,300,46,65,65,55,35,34,0.5,2,1,1,0.5,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5
 809,Melmetal,7,0,0,1,Hex Nut Pokémon,1,Steel,,2.5,800,1,Iron Fist,,,600,135,143,143,80,65,34,0.5,2,1,1,0.5,0.5,2,0,2,0.5,0.5,0.5,0.5,1,0.5,1,0.5,0.5
@@ -1020,7 +1020,7 @@ pokedex_number,name,generation,is_sub_legendary,is_legendary,is_mythical,species
 884,Duraludon,8,0,0,0,Alloy Pokémon,2,Steel,Dragon,1.8,40,3,Light Metal,Heavy Metal,Stalwart,535,70,95,115,120,50,85,0.5,1,0.5,0.5,0.25,1,2,0,2,0.5,0.5,0.5,0.5,1,1,1,0.5,1
 885,Dreepy,8,0,0,0,Lingering Pokémon,2,Dragon,Ghost,0.5,2,3,Clear Body,Infiltrator,Cursed Body,270,28,60,30,40,30,82,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
 886,Drakloak,8,0,0,0,Caretaker Pokémon,2,Dragon,Ghost,1.4,11,3,Clear Body,Infiltrator,Cursed Body,410,68,80,50,60,50,102,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
-887,Dragapult,8,0,0,0,Stealth Pokémon,2,Dragon,Ghost,3,50,3,Clear Body,Infiltrator,Cursed Body,600,88,120,75,100,75,142,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
+887,Dragapult,8,1,0,0,Stealth Pokémon,2,Dragon,Ghost,3,50,3,Clear Body,Infiltrator,Cursed Body,600,88,120,75,100,75,142,0,0.5,0.5,0.5,0.5,2,0,0.5,1,1,1,0.5,1,2,2,2,1,2
 888,Zacian Crowned Sword,8,0,1,0,Warrior Pokémon,2,Fairy,Steel,2.8,355,1,Intrepid Sword,,,720,92,170,115,80,115,148,0.5,2,1,1,0.5,0.5,1,0,2,0.5,0.5,0.25,0.5,1,0,0.5,1,0.5
 888,Zacian Hero of Many Battles,8,0,1,0,Warrior Pokémon,1,Fairy,,2.8,110,1,Intrepid Sword,,,670,92,130,115,80,115,138,1,1,1,1,1,1,0.5,2,1,1,1,0.5,1,1,0,0.5,2,1
 889,Zamazenta Crowned Shield,8,0,1,0,Warrior Pokémon,2,Fighting,Steel,2.9,785,1,Dauntless Shield,,,720,92,130,145,80,145,128,0.5,2,1,1,0.5,0.5,2,0,2,1,1,0.25,0.25,1,0.5,0.5,0.5,1
