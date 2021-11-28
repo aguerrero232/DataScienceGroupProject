@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import loaddata
+
 tab: str = "\t"
 
 
@@ -84,3 +86,19 @@ def basic_stats_string(x_stats, x_label='x'):
                    f"{tab * 5}Min: {round(x_stats.loc['min'], 2)}\n" + \
                    f"{tab * 5}Max: {round(x_stats.loc['max'], 2)}\n"
     return stats_string
+
+
+def data_set_stats(pokemon_data_set, name="Pokemon"):
+
+    pokemon_set_data = f"{tab * 4}{name} Characteristics\n" + \
+                  f"{tab * 5}Number of {name}: {len(pokemon_data_set)}\n" \
+                  f"{tab * 5}Number of Attributes Total: {loaddata.total_attr}\n" + \
+                  f"{tab * 5}Number of Attributes in the Study: {loaddata.study_attr}\n\n\n" + \
+                  f"{tab * 10}- - - Attribute Information - - -\n\n"
+    for col in loaddata.cols:
+        if col in loaddata.z_cols:
+            pokemon_set_data += f"{tab * 8}* {col} (in study)\n"
+        else:
+            pokemon_set_data += f"{tab * 8}* {col}\n"
+
+    return pokemon_set_data

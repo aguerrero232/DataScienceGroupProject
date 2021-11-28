@@ -8,8 +8,35 @@ poke = pd.read_csv('../data/pokedex.csv')
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
 
-# Pokemon population stats
 
+# ------------------------------------------------------------------------------------------------------------
+# things well def need, gonna use this since its easy to use for just these cols
+stat_values = poke[['pokedex_number', 'generation', 'name', 'type_1', 'type_2', 'height_m', 'weight_kg',
+                    'ability_1', 'ability_2', 'ability_hidden',
+                    'total_points', 'hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed',
+                    'is_sub_legendary', 'is_legendary', 'is_mythical']]
+# ------------------------------------------------------------------------------------------------------------
+
+
+# --- column labels for Pokemon ----------------------------------------------------------------
+cols = list(stat_values.columns.values)  # name of colums in type dataframes
+total_attr = len(cols) # count of col labels
+# ------------------------------------------------------------------------------------------------
+
+
+# --- z score column labels for Pokemon ----------------------------------------------------------------------------
+z_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed', 'total_points', 'weight_kg', 'height_m']
+study_attr = len(z_cols)# count of z col labels
+# ------------------------------------------------------------------------------------------------------------------
+
+
+# -- Number of Pokemon in population ---
+num_pokemon = len(poke)
+# ---------------------------------------
+
+
+# ---------------------------------------
+# Pokemon population relevant categories
 total_points = poke['total_points']
 hp = poke['hp']
 speed = poke['speed']
@@ -19,13 +46,10 @@ defense = poke['defense']
 sp_defense = poke['sp_defense']
 height = poke['height_m']
 weight = poke['weight_kg']
+# ---------------------------------------
 
-# things well def need, gonna use this since its easy to use for just these cols
-stat_values = poke[['pokedex_number', 'generation', 'name', 'type_1', 'type_2', 'height_m', 'weight_kg',
-                    'ability_1', 'ability_2', 'ability_hidden',
-                    'total_points', 'hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed',
-                    'is_sub_legendary', 'is_legendary', 'is_mythical']]
 
+# --- Pokemon Pop Stats by category ------------
 total_points_stats = total_points.describe()
 hp_stats = hp.describe()
 speed_stats = speed.describe()
@@ -35,12 +59,8 @@ defense_stats = defense.describe()
 sp_defense_stats = sp_defense.describe()
 height_stats = height.describe()
 weight_stats = weight.describe()
+# --------------------------------------------
 
-# Important values
-
-# -- Number of Pokemon in population ---
-num_pokemon = len(poke)
-# ---------------------------------------
 
 # --- Grouping pokemon by type -----------------------------------------------------------------------------------
 fire_types = stat_values.loc[(stat_values['type_1'] == "Fire") | (stat_values['type_2'] == "Fire")]
@@ -86,26 +106,6 @@ stats_fairy_types = fairy_types.describe()
 # -------------------------------------------------
 
 
-# ---- sample constants --------------------
-# size of pokemon sampled from population
-sample_size = 100
-# number of times we sample the population
-repeat_n = 1000
-# -------------------------------------------
-
-
-# --- samples --------------------------------------------------------------------------------------
-sample_attack = np.random.choice(attack, (sample_size, repeat_n), replace=True)
-sample_attack_mean = pd.DataFrame(sample_attack).describe().loc['mean']  # getting mean of each col
-# ---------------------------------------------------------------------------------------------------
-
-
-# --- samples stats -----------------------------------
-# sample attack stats
-sample_attack_stats = sample_attack_mean.describe()
-# ------------------------------------------------------
-
-
 # --- Z score transformation ------------------------------------------------
 # zscores and zscore stats for pokemon stat values, height(m), and weight(kg)
 z_hp = helper_functions.z_score(hp)
@@ -124,10 +124,32 @@ z_weight = helper_functions.z_score(weight)
 z_weight_stats = z_weight.describe()
 z_height = helper_functions.z_score(height)
 z_height_stats = z_height.describe()
+# dragon type z scores
+z_dragons = helper_functions.z_score(dragon_types[z_cols])
+# ------------------------------------------------------------------------------
+
+
+# ---- sample constants --------------------
+# size of pokemon sampled from population
+sample_size = 100
+# number of times we sample the population
+repeat_n = 1000
+# -------------------------------------------
+
+
+# --- samples --------------------------------------------------------------------------------------
+sample_attack = np.random.choice(attack, (sample_size, repeat_n), replace=True)
+sample_attack_mean = pd.DataFrame(sample_attack).describe().loc['mean']  # getting mean of each col
+# ---------------------------------------------------------------------------------------------------
+
+
+# --- samples stats -----------------------------------
+# sample attack stats
+sample_attack_stats = sample_attack_mean.describe()
 # sample attack zscore and stats
 z_attack_s = helper_functions.z_score(sample_attack_mean)
 z_attack_stats_s = z_attack_s.describe()
-# ------------------------------------------------------------------------------
+# ------------------------------------------------------
 
 
 # --- log normal distributions -
@@ -155,7 +177,6 @@ std_dev_dragon_w = stats_dragon_types['weight_kg'].loc['std']
 
 
 # --- Getting Dragon and Non Dragon Types and collecting their various statistics --
-cols = list(dragon_types.columns.values)  # name of colums in type dataframes
 # dragon types
 # already have list of all dragon types it is named dragon_types
 dragon_type_height = dragon_types['height_m']
@@ -175,7 +196,7 @@ n_d_cdf = scipy.stats.norm.cdf(not_dragon_heights_sorted)
 # ----------------------------------------------------------------------------------
 
 
-# --- probailities of height --------------------------
+# --- Probabilities of height and weight -------------------------------------------------------------
 # height
 prob_h = (np.arange(len(height)) + 1) / len(height)
 prob_h_stats = pd.Series(prob_h).describe()
@@ -188,7 +209,7 @@ prob_h_d_stats = pd.Series(prob_h_d).describe()
 # height prob non dragons
 prob_h_nd = (np.arange(len(not_dragon_type_height)) + 1) / len(not_dragon_type_height)
 prob_h_nd_stats = pd.Series(prob_h_nd).describe()
-# ------------------------------------------------------
+# --------------------------------------------------------------------------------------------------
 
 
 # --- three groups of pokemon attack stats ----------------------------------------------
@@ -203,7 +224,7 @@ ci95_attack = SEM_attack * 1.96
 # ---------------------------------------------------------------------------------------
 
 
-# --- using different number of bins to display dragon height dist ---------------
+# --- using different number of bins to display dragon/non dragon height dist --------------------------
 b_num = 10
 # data for dragons
 bin10_d, freq10_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num)
@@ -213,7 +234,8 @@ bin30_d, freq30_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num
 bin10_nd, freq10_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num)
 bin20_nd, freq20_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num * 2)
 bin30_nd, freq30_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num * 3)
-# --------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------------------------------
+
 
 # --- Trimming Height Data ---------------------------------------------------------------------------
 height_trim_low = .1
