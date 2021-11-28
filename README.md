@@ -26,7 +26,7 @@ Using standard normal distribution for quick probability estimation for all poke
 Normal and Log Distributions of pokemon heights and weights. Are Pokemon heights, and weights normally distributed? Let's find out.
 
 ## pokemon_test_are_dragons_taller
-Do Dragon Type Pokemon tend to be taller than all Pokemon?  What about just Non Dragon Type Pokemon?
+Do Dragon Type Pokemon tend to be taller than Non Dragon Type Pokemon?
 
 ## pokemon_regression    
 IN PROGRESS

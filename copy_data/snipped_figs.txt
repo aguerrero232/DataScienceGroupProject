@@ -103,3 +103,56 @@
 # stats_gen6_fire = gen6_fire.describe()
 # stats_gen7_fire = gen7_fire.describe()
 # stats_gen8_fire = gen8_fire.describe()
+
+
+# All Types of Pokemon
+# Displaying height(m) distribution of all Pokemon
+#
+# curr_fig = "1"
+#
+# print(f'{separator + separator}\n')
+# print(f'{tab * 6}- - - Figure {curr_fig}: Height(m) distribution of all Pokemon - - -\n')
+#
+# print(helper_functions.basic_stats_string(loaddata.height_stats, "Height(m)"))
+#
+# # storing frequencies of different heights of all pokemon here
+# plt.xlabel('Height(m)')
+# plt.ylabel('Frequency')
+# plt.title(f'Figure {curr_fig}: Height(m) distribution of all Pokemon')
+# counts_a = plt.hist(loaddata.height, bins=100)
+# plt.show()
+#
+# print(f'{separator + separator}\n')
+#
+#
+# curr_fig = "1b"
+#
+# # PMF For height(m) of all Pokemon
+# bin_center = (counts_a[1][1:] + counts_a[1][:-1]) / 2
+# all_h_pmf = counts_a[0] / loaddata.num_pokemon
+#
+# print(f'{separator + separator}\n')
+# print(f'{tab * 6}- - - Figure {curr_fig}: PMF: Height(m) of all Pokemon - - -\n')
+#
+# plt.xlabel('Height(m)')
+# plt.ylabel('Probability')
+# plt.title(f'Figure {curr_fig}: PMF: Height(m) of all Pokemon')
+# plt.bar(bin_center, all_h_pmf, width=.2)
+# plt.show()
+#
+# print(f'{separator + separator}\n')
+
+curr_fig = "3"
+
+print(f'{separator + separator}\n')
+print(f'{tab * 6}- - - Figure {curr_fig}: PMF: Height(m) of Dragon vs all Pokemon - - -\n')
+
+plt.xlabel('Height(m)')
+plt.ylabel('Probability')
+plt.title(f"Figure {curr_fig}: PMF: Height(m) of Dragon vs all Pokemon")
+plt.legend(('Dragon Type', 'All Pokemon'))
+plt.plot(bin_center_d, dragon_h_pmf, '-o',
+         bin_center, all_h_pmf, '-+')
+plt.show()
+
+print(f'{separator + separator}\n')

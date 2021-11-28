@@ -205,9 +205,14 @@ ci95_attack = SEM_attack * 1.96
 
 # --- using different number of bins to display dragon height dist ---------------
 b_num = 10
-bin10, freq10 = helper_functions.my_hist_data(dragon_type_height, bins=b_num)
-bin20, freq20 = helper_functions.my_hist_data(dragon_type_height, bins=b_num * 2)
-bin30, freq30 = helper_functions.my_hist_data(dragon_type_height, bins=b_num * 3)
+# data for dragons
+bin10_d, freq10_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num)
+bin20_d, freq20_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num * 2)
+bin30_d, freq30_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num * 3)
+# data for not dragons
+bin10_nd, freq10_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num)
+bin20_nd, freq20_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num * 2)
+bin30_nd, freq30_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num * 3)
 # --------------------------------------------------------------------------------
 
 # --- Trimming Height Data ---------------------------------------------------------------------------
