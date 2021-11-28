@@ -5,7 +5,7 @@ Ariel Guerrero
 Joshua Cherry   
 Hunter Long   
 
-# --------------------------- File Descriptions ---------------------------
+# --------------------- File Descriptions ---------------------
 
 ### loaddata.py
 Contains project data needed for statistical analysis
