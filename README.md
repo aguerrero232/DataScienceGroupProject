@@ -5,8 +5,6 @@ Joshua Cherry
 Hunter Long   
 
 
-# File Descriptions 
-
 #loaddata.py :
 Contains project data needed for statistical analysis
 
