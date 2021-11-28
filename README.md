@@ -8,12 +8,6 @@ Hunter Long
 ## --------------------- File Descriptions ---------------------
 
 # Folder: analysis/
-### loaddata.py
-* Contains project data needed for statistical analysis
-
-### helper_functions.py
-* Contain functions that prove useful for statistical analysis and plotting
-
 ### pokemon_attack_stat_analysis.py
 * Analysis of pokemon attack stat, distribution, standardized distribution, SEM, SEM+95% Confidence Interval
 
@@ -32,6 +26,16 @@ Hunter Long
 ### pokemon_regression    
 * IN PROGRESS
 
+# Folder: helpers/
+### loaddata.py
+* Contains project data statistical analysis used throught analysis files
+
+### helper_functions.py
+* Contain functions that prove useful for statistical analysis and plotting
+
+# Folder: data/
+### pokedex.csv
+* Contains all pokemon data we are using to run tests on and analyze
 
 # Folder: copy_data/
 ### analysis.zip
