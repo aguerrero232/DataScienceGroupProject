@@ -3,8 +3,10 @@ import matplotlib.pyplot as plt
 import helper_functions
 import loaddata
 
+
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
+
 
 # ----------------------------------------------------------------------------------
 print(f'{separator + separator}\n')

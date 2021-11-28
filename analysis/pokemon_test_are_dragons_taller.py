@@ -3,10 +3,12 @@ import scipy.stats
 import helper_functions
 import loaddata
 
+
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
 # Do Dragon Type Pokemon tend to be taller than all Pokemon? Non Dragon Type Pokemon?
 dh_null_hypothesis = "Dragon Type Pokemon tend to be taller than Non Dragon Type Pokemon."
+
 
 # ----------------------------------------------------------------------------------
 print(f'{separator + separator}')
@@ -21,6 +23,7 @@ print(f'{separator + separator}\n')
 print(f'{tab * 3}Do Dragon Type Pokemon tend to be taller than Non Dragon Type Pokemon?\n')
 print(f'{separator + separator}\n')
 # ----------------------------------------------------------------------------------
+
 
 # ----------------------------------------------------------------------------------
 # Dragon Type Pokemon

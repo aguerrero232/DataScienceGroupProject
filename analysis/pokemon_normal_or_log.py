@@ -3,8 +3,10 @@ import helper_functions
 import loaddata
 import pandas as pd
 
+
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
+
 
 # ----------------------------------------------------------------------------------
 print(f'{separator + separator}\n')

@@ -5,10 +5,12 @@ import loaddata
 import helper_functions
 from sklearn import linear_model
 
+
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
 
-# intro ----------------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------------
 print(f'{separator + separator}\n')
 print(f'{tab * 7}- - - Pokemon Data Analysis - Pokemon Linear Regression - - -')
 print(f'{tab * 14}Group 18\n')
@@ -20,7 +22,7 @@ print(f'{separator + separator}\n')
 print(f"{tab*2}Looking at Dragon Type data!\n")
 print(f'{separator + separator}\n')
 print(helper_functions.data_set_stats(loaddata.dragon_types, "Dragon Type"))
-# intro ----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 
 
 # ----------------------------------------------------------------------------------

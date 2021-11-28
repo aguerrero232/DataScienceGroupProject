@@ -1,8 +1,10 @@
 import scipy.stats
 import loaddata
 
+
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
+
 
 # ----------------------------------------------------------------------------------
 print(f'{separator + separator}\n')
@@ -19,6 +21,7 @@ print(f"\n{tab * 2}Using standard normal distribution for quick probability esti
       f"Weights(kg).\n")
 print(f'{separator + separator}\n')
 # ----------------------------------------------------------------------------------
+
 
 # ----------------------------------------------------------------------------------
 # how many Pokemon heights are less than 7 meters
