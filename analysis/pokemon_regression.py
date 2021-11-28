@@ -34,7 +34,7 @@ curr_fig = "1b"
 print(f'{separator + separator}\n')
 print(f'{tab * 6}- - - Figure {curr_fig}: - - -\n')
 
-loaddata.dragon_types[['weight_kg']].boxplot()
+loaddata.dragon_types[['height_m', 'weight_kg']].boxplot()
 plt.show()
 
 print(f'{separator + separator}\n')
