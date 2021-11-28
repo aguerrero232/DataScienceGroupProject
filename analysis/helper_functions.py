@@ -13,6 +13,7 @@ def plot_hist(data, title='histogram', x_label='bin center', y_label='frequency'
 
     if is_z_score:
         plt.title(title)
+
         # plot histogram and return counts containing frequency and bin center data
         plt.hist(data, bins, color=c)
     else:

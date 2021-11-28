@@ -4,7 +4,7 @@ import scipy.stats
 import math
 import helper_functions
 
-poke = pd.read_csv('pokedex.csv')
+poke = pd.read_csv('../data/pokedex.csv')
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
 
