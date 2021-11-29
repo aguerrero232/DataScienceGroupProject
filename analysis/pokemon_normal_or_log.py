@@ -31,7 +31,7 @@ curr_fig = "1"
 print(f'{separator + separator}\n')
 print(f'{tab * 6}- - - Figure {curr_fig}: Distribution of Pokemon Height(m) - - -\n')
 print(helper_functions.basic_stats_string(loaddata.height_stats, "Height(m)"))
-helper_functions.plot_hist(loaddata.height, title=f"Figure {curr_fig}: Normal Distribution of Pokemon Height(m)",
+helper_functions.plot_hist(loaddata.heights, title=f"Figure {curr_fig}: Normal Distribution of Pokemon Height(m)",
                            x_label="Height(m)", y_label="Frequency", bins=100)
 plt.show()
 print(f'{separator + separator}\n')
@@ -42,7 +42,7 @@ print(f'{separator + separator}\n')
 curr_fig = "1b"
 print(f'{separator + separator}\n')
 print(f'{tab * 6}- - - Figure {curr_fig}: Normal probability of Pokemon Heights(m) - - -\n')
-helper_functions.plot_norm_prob(loaddata.height, y_label='Height(m)',
+helper_functions.plot_norm_prob(loaddata.heights, y_label='Height(m)',
                                 title=f'Figure {curr_fig}: Normal probability of Pokemon Heights(m)')
 plt.show()
 print(f'{separator + separator}\n')
@@ -54,7 +54,7 @@ curr_fig = "1c"
 print(f'{separator + separator}\n')
 print(f'{tab * 6}- - - Figure {curr_fig}: Normal CDF of Pokemon Heights(m) - - -\n')
 print(helper_functions.basic_stats_string(loaddata.prob_h_stats, f"Probability(value <= Height(m)))"))
-_, _ = helper_functions.plot_cdf(loaddata.height, title=f"Figure {curr_fig}: Normal CDF of Pokemon Heights(m)",
+_, _ = helper_functions.plot_cdf(loaddata.heights, title=f"Figure {curr_fig}: Normal CDF of Pokemon Heights(m)",
                                  x_label='Height(m)', y_label='prob(value $\leq$ height)')
 plt.show()
 print(f'{separator + separator}\n')
@@ -127,7 +127,7 @@ curr_fig = "3c"
 print(f'{separator + separator}\n')
 print(f'{tab * 6}- - - Figure {curr_fig}: Normal CDF of Pokemon Weight(kg) - - -\n')
 print(helper_functions.basic_stats_string(loaddata.prob_w_stats, f"Probability(value <= Weight(kg)))"))
-_, _ = helper_functions.plot_cdf(loaddata.height,
+_, _ = helper_functions.plot_cdf(loaddata.heights,
                                  title=f"Figure {curr_fig}: Normal CDF of Pokemon Weight(kg)",
                                  x_label='Weight(kg)', y_label='prob(value $\leq$ weight)')
 plt.show()

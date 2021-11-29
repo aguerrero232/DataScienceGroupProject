@@ -146,11 +146,11 @@ print(f'{separator + separator}\n')
 curr_fig = "5"
 print(f'{separator + separator}\n')
 print(f'{tab * 6}- - - Figure {curr_fig}: Correlation between Height(m) and Weight(kg) - - -\n')
-print(helper_functions.corr_compute(loaddata.height, loaddata.weight, "Height(m)", "Weight(kg)"))
+print(helper_functions.corr_compute(loaddata.heights, loaddata.weight, "Height(m)", "Weight(kg)"))
 plt.xlabel('Height(m)')
 plt.ylabel('Weight(kg)')
 plt.title(f"Figure {curr_fig}: Correlation between Height(m) and Weight(kg)")
-plt.scatter(loaddata.height, loaddata.weight)
+plt.scatter(loaddata.heights, loaddata.weight)
 plt.show()
 print(f'{separator + separator}\n')
 # ----------------------------------------------------------------------------------

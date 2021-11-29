@@ -88,12 +88,11 @@ def basic_stats_string(x_stats, x_label='x'):
 
 
 def data_set_stats(pokemon_data_set, name="Pokemon", total_attr=20, study_attr=9, cols=[], z_cols=[]):
-
     pokemon_set_data = f"{tab * 4}{name} Characteristics\n" + \
-                  f"{tab * 5}Number of {name}: {len(pokemon_data_set)}\n" \
-                  f"{tab * 5}Number of Attributes Total: {total_attr}\n" + \
-                  f"{tab * 5}Number of Attributes in the Study: {study_attr}\n\n\n" + \
-                  f"{tab * 10}- - - Attribute Information - - -\n\n"
+                       f"{tab * 5}Number of {name}: {len(pokemon_data_set)}\n" \
+                       f"{tab * 5}Number of Attributes Total: {total_attr}\n" + \
+                       f"{tab * 5}Number of Attributes in the Study: {study_attr}\n\n\n" + \
+                       f"{tab * 10}- - - Attribute Information - - -\n\n"
     for col in cols:
         if col in z_cols:
             pokemon_set_data += f"{tab * 8}* {col} (in study)\n"
@@ -101,3 +100,19 @@ def data_set_stats(pokemon_data_set, name="Pokemon", total_attr=20, study_attr=9
             pokemon_set_data += f"{tab * 8}* {col}\n"
 
     return pokemon_set_data
+
+
+def trim_stats(initial, trimmed, name='Pokemon', height_low=0, height_high=0, weight_low=0, weight_high=0, trimmed_height=False, trimmed_weight=False):
+    trim_data = f"{tab * 4}Trimmed extreme Height(m) and Weight(kg) from {name} data!\n"
+
+    if trimmed_height:
+        trim_data += f'{tab * 5}min height = {height_low}(m), max height = {height_high}(m)\n'
+    if trimmed_weight:
+        trim_data += f'{tab * 5}min weight = {weight_low}(kg), max weight = {weight_high}(kg)\n'
+
+    trim_data += f'{tab * 5}Removed {initial - trimmed} / {initial} = ' + \
+                 f'{round(((initial - trimmed) / initial) * 100, 2)}%' \
+                 f' of cases\n' + \
+                 f'{tab * 5}{trimmed} Pokemon Remain\n'
+
+    return trim_data

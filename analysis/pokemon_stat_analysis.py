@@ -12,7 +12,7 @@ separator = '---------------------------------------------------------------'
 tab: str = "\t"
 
 
-def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_stat_value_stats):
+def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_stat_value_stats, modifier=''):
     # ----------------------------------------------------------------------------------
     print(f'{separator + separator}\n')
     print(f'{tab * 10}- - - Pokemon Data Analysis - {stat_name} Stat Analysis - - -')
@@ -28,9 +28,9 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     # plotting bell curve for pokemon stat distribution
     curr_fig = "1"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: {stat_name} Stat Distribution - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: {stat_name} Stat Distribution {modifier} - - -\n')
     print(helper_functions.basic_stats_string(stat_value_stats, stat_name))
-    helper_functions.plot_hist(stat_values, f"Figure {curr_fig}: {stat_name} Stat Distribution", stat_name,
+    helper_functions.plot_hist(stat_values, f"Figure {curr_fig}: {stat_name} Stat Distribution {modifier}", stat_name,
                                'frequency', 'blue', 'red', False)
     plt.show()
     print(f'{separator + separator}\n')
@@ -40,9 +40,9 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     # plotting stat dist. (standardized)
     curr_fig = "1b"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: {stat_name} Stat Distribution (standardized) - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: {stat_name} Stat Distribution (standardized) {modifier} - - -\n')
     print(helper_functions.basic_stats_string(z_stat_value_stats, f"Z {stat_name}"))
-    helper_functions.plot_hist(z_stat_values, f"Figure {curr_fig}: {stat_name} Stat Distribution (standardized)",
+    helper_functions.plot_hist(z_stat_values, f"Figure {curr_fig}: {stat_name} Stat Distribution (standardized) {modifier}",
                                F'Z {stat_name}', 'frequency', 'blue', 'red', True)
     plt.show()
     print(f'{separator + separator}\n')
@@ -52,7 +52,7 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     # Population Stat distribution standardized plot
     curr_fig = "2"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: Population raw {stat_name} value against standardized score - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: Population raw {stat_name} value against standardized score {modifier} - - -\n')
     print(helper_functions.corr_compute(stat_values, z_stat_values, f"{stat_name}", f"Z {stat_name}"))
     plt.xlabel(f'{stat_name}')
     plt.ylabel('Z-score (unit-less)')
@@ -91,10 +91,10 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     # plotting sample Pokemon attack distribution
     curr_fig = "3"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: Sample Pokemon {stat_name} Distribution - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: Sample Pokemon {stat_name} Distribution {modifier} - - -\n')
     print(f'{tab * 4}Sample size = {loaddata.sample_size}, Repeated {loaddata.repeat_n}x\n')
     print(helper_functions.basic_stats_string(stat_sample_stats, stat_name))
-    helper_functions.plot_hist(stat_sample_mean, f'Figure {curr_fig}: Sample Pokemon {stat_name} Distribution',
+    helper_functions.plot_hist(stat_sample_mean, f'Figure {curr_fig}: Sample Pokemon {stat_name} Distribution {modifier}',
                                f'{stat_name}', 'frequency', 'blue', 'red', False)
     plt.show()
     print(f'{separator + separator}\n')
@@ -104,12 +104,12 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     # Plotting sample attack distribution (standardized)
     curr_fig = "3b"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: Sample Pokemon {stat_name} Distribution (standardized) - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: Sample Pokemon {stat_name} Distribution (standardized) {modifier} - - -\n')
     print(f'{tab * 4}Sample Size = {loaddata.sample_size}, Repeated {loaddata.repeat_n}x\n')
     print(helper_functions.basic_stats_string(z_stat_sample_stats, f"Z {stat_name}"))
 
     helper_functions.plot_hist(z_stat_sample, x_label=f'Z {stat_name}', y_label='frequency',
-                               title=f"Figure {curr_fig}: Sample Pokemon {stat_name} Distribution (standardized)",
+                               title=f"Figure {curr_fig}: Sample {stat_name} Distribution (standardized) {modifier}",
                                c='blue', tc='red', is_z_score=True)
     plt.show()
     print(f'{separator + separator}\n')
@@ -119,12 +119,12 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     # Sample Attack against standardized plot
     curr_fig = "4"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: Sample Raw {stat_name} value against standardized score - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: Sample Raw {stat_name} value against standardized score {modifier} - - -\n')
     print(f'{tab * 4}Sample Size = {loaddata.sample_size}, Repeated {loaddata.repeat_n}x\n')
     print(helper_functions.corr_compute(stat_sample_mean, z_stat_sample, f"{stat_name}", f"Z {stat_name}"))
     plt.xlabel(f'{stat_name}')
     plt.ylabel('Z-score (unit-less)')
-    plt.title(f'Figure {curr_fig}: Sample Raw {stat_name} value against standardized score')
+    plt.title(f'Figure {curr_fig}: Sample Raw {stat_name} value against standardized score {modifier}')
     plt.scatter(stat_sample_mean, z_stat_sample)
     plt.show()
     print(f'{separator + separator}\n')
@@ -135,9 +135,9 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     curr_fig = "5"
     sem_str = ""
     for x in range(len(stat_sem)):
-        sem_str += f"{tab * 5}Group #{x + 1}: {round(stat_sem[x], 2)}\n"
+        sem_str += f"{tab * 2}Group #{x + 1}: {round(stat_sem[x], 2)}\n"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: Mean and SEM {stat_name} stat for three groups of Pokemon - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: Mean and SEM {stat_name} stat for three groups of Pokemon {modifier} - - -\n')
     print(f'{tab * 4}Sample size per group = {stat_measures.shape[0]}\n')
     print(f'{tab * 4}Standard Error of the Mean:')
     print(sem_str)
@@ -147,7 +147,7 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     print(helper_functions.basic_stats_string(g3_stats, f"{stat_name} (group 3)"))
     plt.xlabel('Sample group')
     plt.ylabel(f'Mean $\pm$ SEM ({stat_name.lower()})')
-    plt.title(f'Figure {curr_fig}: Mean and SEM {stat_name} stat for three groups of Pokemon')
+    plt.title(f'Figure {curr_fig}: Mean & SEM {stat_name} for 3 groups. {modifier}')
     plt.errorbar([1, 2, 3], np.mean(stat_measures, 0), stat_sem)
     plt.xticks([1, 2, 3])
     plt.show()
@@ -159,16 +159,16 @@ def stat_analysis(stat_name, stat_values, z_stat_values, stat_value_stats, z_sta
     curr_fig = "5b"
     ci_95_str = ""
     for x in range(len(stat_sem)):
-        ci_95_str += f"{tab * 5}Group #{x + 1}: {round(stat_ci95[x], 2)}\n"
+        ci_95_str += f"{tab * 2}Group #{x + 1}: {round(stat_ci95[x], 2)}\n"
     print(f'{separator + separator}\n')
-    print(f'{tab * 6}- - - Figure {curr_fig}: 95% Confidence Interval {stat_name} stat in mean '
-          f'of 3 groups of Pokemon - - -\n')
+    print(f'{tab * 3}- - - Figure {curr_fig}: 95% Confidence Interval {stat_name} stat in mean '
+          f'of 3 groups of Pokemon {modifier} - - -\n')
     print(f'{tab * 4}Sample size per group = {stat_measures.shape[0]}\n')
     print(f'{tab * 4}95% Confidence Interval {stat_name} stat for mean of 3 groups:')
     print(ci_95_str)
     plt.xlabel('Sample Groups')
     plt.ylabel(f'Mean, SEM, & 95% CI ({stat_name})')
-    plt.title(f"Figure {curr_fig}: 95% Confidence Interval for {stat_name} stat.")
+    plt.title(f"Figure {curr_fig}: 95% Confidence Interval of {stat_name}. {modifier}")
     plt.errorbar([1.05, 2.05, 3.05], np.mean(stat_measures, 0), stat_sem)
     plt.errorbar([1, 2, 3], np.mean(stat_measures, 0), stat_ci95)
     plt.legend(('SEM', '95% CI'), loc=2)
