@@ -172,8 +172,10 @@ print(f'{separator + separator}\n')
 # ----------------------------------------------------------------------------------
 # t-test going up means more likely to be a Dragon
 curr_fig = "4"
+
 d_c_test = counts_d[0] / len(loaddata.dragon_types)
 nd_c_test = counts_nd[0] / len(loaddata.not_dragon_type)
+
 t_test_dragon_height = d_c_test - nd_c_test
 t_test_dh_t_val = scipy.stats.ttest_ind(d_c_test, nd_c_test)
 t_test_dh_statistic_val = t_test_dh_t_val.statistic

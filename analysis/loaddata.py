@@ -4,48 +4,50 @@ import scipy.stats
 import math
 import helper_functions
 
-poke = pd.read_csv('../data/pokedex.csv')
+stat_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed']
+physical_attr_cols = ['height_m', 'weight_kg']
 separator = '---------------------------------------------------------------'
 tab: str = "\t"
 
+all_pokemon = pd.read_csv('../data/pokedex.csv').dropna(subset=(stat_cols + physical_attr_cols))
 
 # ------------------------------------------------------------------------------------------------------------
 # things well def need, gonna use this since its easy to use for just these cols
-stat_values = poke[['pokedex_number', 'generation', 'name', 'type_1', 'type_2', 'height_m', 'weight_kg',
-                    'ability_1', 'ability_2', 'ability_hidden',
-                    'total_points', 'hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed',
-                    'is_sub_legendary', 'is_legendary', 'is_mythical']]
+stat_values = all_pokemon[['pokedex_number', 'generation', 'name', 'type_1', 'type_2', 'height_m', 'weight_kg',
+                           'ability_1', 'ability_2', 'ability_hidden',
+                           'total_points', 'hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed',
+                           'is_sub_legendary', 'is_legendary', 'is_mythical']]
 # ------------------------------------------------------------------------------------------------------------
 
 
 # --- column labels for Pokemon ----------------------------------------------------------------
 cols = list(stat_values.columns.values)  # name of colums in type dataframes
-total_attr = len(cols) # count of col labels
+total_attr = len(cols)  # count of col labels
 # ------------------------------------------------------------------------------------------------
 
 
 # --- z score column labels for Pokemon ----------------------------------------------------------------------------
 z_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed', 'total_points', 'weight_kg', 'height_m']
-study_attr = len(z_cols)# count of z col labels
+study_attr = len(z_cols)  # count of z col labels
 # ------------------------------------------------------------------------------------------------------------------
 
 
 # -- Number of Pokemon in population ---
-num_pokemon = len(poke)
+num_pokemon = len(all_pokemon)
 # ---------------------------------------
 
 
 # ---------------------------------------
 # Pokemon population relevant categories
-total_points = poke['total_points']
-hp = poke['hp']
-speed = poke['speed']
-attack = poke['attack']
-sp_attack = poke['sp_attack']
-defense = poke['defense']
-sp_defense = poke['sp_defense']
-height = poke['height_m']
-weight = poke['weight_kg']
+total_points = all_pokemon['total_points']
+hp = all_pokemon['hp']
+speed = all_pokemon['speed']
+attack = all_pokemon['attack']
+sp_attack = all_pokemon['sp_attack']
+defense = all_pokemon['defense']
+sp_defense = all_pokemon['sp_defense']
+height = all_pokemon['height_m']
+weight = all_pokemon['weight_kg']
 # ---------------------------------------
 
 
@@ -108,6 +110,8 @@ stats_fairy_types = fairy_types.describe()
 
 # --- Z score transformation ------------------------------------------------
 # zscores and zscore stats for pokemon stat values, height(m), and weight(kg)
+z_total_points = helper_functions.z_score(total_points)
+z_total_points_stats = z_total_points.describe()
 z_hp = helper_functions.z_score(hp)
 z_hp_stats = z_hp.describe()
 z_attack = helper_functions.z_score(attack)
@@ -124,8 +128,32 @@ z_weight = helper_functions.z_score(weight)
 z_weight_stats = z_weight.describe()
 z_height = helper_functions.z_score(height)
 z_height_stats = z_height.describe()
-# dragon type z scores
-z_dragons = helper_functions.z_score(dragon_types[z_cols])
+# pokemon z scores
+z_pokemon = helper_functions.z_score(all_pokemon[z_cols])
+# pokemon type z scores
+z_fire = helper_functions.z_score(fire_types[z_cols])
+z_water = helper_functions.z_score(water_types[z_cols])
+z_grass = helper_functions.z_score(grass_types[z_cols])
+
+z_electric = helper_functions.z_score(electric_types[z_cols])
+z_psychic = helper_functions.z_score(psychic_types[z_cols])
+z_ghost = helper_functions.z_score(ghost_types[z_cols])
+
+z_normal = helper_functions.z_score(normal_types[z_cols])
+z_fighting = helper_functions.z_score(fighting_types[z_cols])
+z_ice = helper_functions.z_score(ice_types[z_cols])
+
+z_dark = helper_functions.z_score(dark_types[z_cols])
+z_fairy = helper_functions.z_score(fairy_types[z_cols])
+z_poison = helper_functions.z_score(poison_types[z_cols])
+
+z_ground = helper_functions.z_score(ground_types[z_cols])
+z_rock = helper_functions.z_score(rock_types[z_cols])
+z_steel = helper_functions.z_score(steel_types[z_cols])
+
+z_bug = helper_functions.z_score(bug_types[z_cols])
+z_flying = helper_functions.z_score(flying_types[z_cols])
+z_dragon = helper_functions.z_score(dragon_types[z_cols])
 # ------------------------------------------------------------------------------
 
 
@@ -135,21 +163,6 @@ sample_size = 100
 # number of times we sample the population
 repeat_n = 1000
 # -------------------------------------------
-
-
-# --- samples --------------------------------------------------------------------------------------
-sample_attack = np.random.choice(attack, (sample_size, repeat_n), replace=True)
-sample_attack_mean = pd.DataFrame(sample_attack).describe().loc['mean']  # getting mean of each col
-# ---------------------------------------------------------------------------------------------------
-
-
-# --- samples stats -----------------------------------
-# sample attack stats
-sample_attack_stats = sample_attack_mean.describe()
-# sample attack zscore and stats
-z_attack_s = helper_functions.z_score(sample_attack_mean)
-z_attack_stats_s = z_attack_s.describe()
-# ------------------------------------------------------
 
 
 # --- log normal distributions -
@@ -186,7 +199,7 @@ n_dragon_type = len(dragon_types)
 dragon_heights_sorted = np.sort(dragon_type_height)
 d_cdf = scipy.stats.norm.cdf(dragon_heights_sorted)
 # non dragon types
-not_dragon_type = poke.loc[(poke['type_1'] != "Dragon") & (poke['type_2'] != "Dragon")]
+not_dragon_type = all_pokemon.loc[(all_pokemon['type_1'] != "Dragon") & (all_pokemon['type_2'] != "Dragon")]
 not_dragon_type_height = not_dragon_type['height_m']
 not_dragon_type_weight = not_dragon_type['weight_kg']
 not_dragon_type_stat_values = not_dragon_type[cols[16:23]]
@@ -212,18 +225,6 @@ prob_h_nd_stats = pd.Series(prob_h_nd).describe()
 # --------------------------------------------------------------------------------------------------
 
 
-# --- three groups of pokemon attack stats ----------------------------------------------
-measures_attack = pd.DataFrame(np.random.choice(attack, (300, 3), replace=True))
-g1_stats = measures_attack[0].describe()
-g2_stats = measures_attack[1].describe()
-g3_stats = measures_attack[2].describe()
-# --- SEM for 3 groups of pokemon attack stats  ->  std / sqrt(len(group))
-SEM_attack = np.std(measures_attack, 0) / math.sqrt(measures_attack.shape[0])
-# --- 95% Confidence Interval ----------------------------------------------------------
-ci95_attack = SEM_attack * 1.96
-# ---------------------------------------------------------------------------------------
-
-
 # --- using different number of bins to display dragon/non dragon height dist --------------------------
 b_num = 10
 # data for dragons
@@ -243,14 +244,59 @@ height_trim_high = 2.33
 
 h2 = height[(height > height_trim_low) & (height < height_trim_high)]  # trimmed height
 
+pokemon_trimmed_heights = all_pokemon[(all_pokemon['height_m'] > height_trim_low) &
+                                      (all_pokemon['height_m'] < height_trim_high)]
+
+z_pokemon_trimmed_height = helper_functions.z_score(pokemon_trimmed_heights)
+
 prob_h_trim = (np.arange(len(h2)) + 1) / len(h2)
 prob_h_trim_stats = pd.Series(prob_h_trim).describe()
 
-trim_data = f"{tab * 4}Trimmed extremes from Pokemon Height(m) data\n" + \
-            f'{tab * 5}min height = {height_trim_low}(m), max height = {height_trim_high}(m)\n' + \
-            f'{tab * 5}Removed {len(height) - len(h2)} / {len(height)} = ' + \
-            f'{round(((len(height) - len(h2)) / len(height)) * 100, 2)}% of cases\n' + \
-            f'{tab * 5}{len(h2)} Pokemon Remain\n'
+trim_data_h = f"{tab * 4}Trimmed extreme Height(m) from Pokemon data\n" + \
+              f'{tab * 5}min height = {height_trim_low}(m), max height = {height_trim_high}(m)\n' + \
+              f'{tab * 5}Removed {num_pokemon - len(h2)} / {num_pokemon} = ' + \
+              f'{round(((num_pokemon - len(h2)) / num_pokemon) * 100, 2)}% of cases\n' + \
+              f'{tab * 5}{len(pokemon_trimmed_heights)} Pokemon Remain\n'
+# -----------------------------------------------------------------------------------------------------
+
+
+# --- Trimming Weight Data ---------------------------------------------------------------------------
+weight_trim_low = 1
+weight_trim_high = 300
+
+# trimmed weight
+pokemon_trimmed_weights = all_pokemon[(all_pokemon['weight_kg'] > weight_trim_low) &
+                                      (all_pokemon['weight_kg'] < weight_trim_high)]
+
+z_pokemon_trimmed_weight = helper_functions.z_score(pokemon_trimmed_weights)
+
+prob_w_trim = (np.arange(len(pokemon_trimmed_weights[['weight_kg']])) + 1) / len(pokemon_trimmed_weights)
+prob_w_trim_stats = pd.Series(prob_h_trim).describe()
+
+trim_data_w = f"{tab * 4}Trimmed extreme Weight(kg) from Pokemon data\n" + \
+              f'{tab * 5}min weight = {weight_trim_low}(kg), max weight = {weight_trim_high}(kg)\n' + \
+              f'{tab * 5}Removed {num_pokemon - len(pokemon_trimmed_weights)} / {num_pokemon} = ' + \
+              f'{round(((num_pokemon - len(pokemon_trimmed_weights)) / num_pokemon) * 100, 2)}% of cases\n' + \
+              f'{tab * 5}{len(pokemon_trimmed_weights)} Pokemon Remain\n'
+# -----------------------------------------------------------------------------------------------------
+
+
+# --- Trimming Height and Weight Data ---------------------------------------------------------------------------
+# trimmed height and weight
+pokemon_trimmed_height_and_weight = all_pokemon[(all_pokemon['weight_kg'] > weight_trim_low) &
+                                                (all_pokemon['weight_kg'] < weight_trim_high) &
+                                                (all_pokemon['height_m'] > height_trim_low) &
+                                                (all_pokemon['height_m'] < height_trim_high)]
+
+z_pokemon_trimmed_height_and_weight = helper_functions.z_score(pokemon_trimmed_height_and_weight)
+
+trim_data_h_w = f"{tab * 4}Trimmed extreme Height(m) and Weight(kg) from Pokemon data!\n" + \
+                f'{tab * 5}min height = {height_trim_low}(m), max height = {height_trim_high}(m)\n' + \
+                f'{tab * 5}min weight = {weight_trim_low}(kg), max weight = {weight_trim_high}(kg)\n' + \
+                f'{tab * 5}Removed {num_pokemon - len(pokemon_trimmed_height_and_weight)} / {num_pokemon} = ' + \
+                f'{round(((num_pokemon - len(pokemon_trimmed_height_and_weight)) / num_pokemon) * 100, 2)}%' \
+                f' of cases\n' + \
+                f'{tab * 5}{len(pokemon_trimmed_height_and_weight)} Pokemon Remain\n'
 # -----------------------------------------------------------------------------------------------------
 
 

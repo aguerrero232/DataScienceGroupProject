@@ -1,66 +1,61 @@
-
-
-# trimming data to be more normally distributed
+# # ----------------------------------------------------------------------------------
 # curr_fig = "2"
-#
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: Normal Distribution of Pokemon Height(m) (trimmed)- - -\n')
 # print(loaddata.trim_data)
 # print(helper_functions.basic_stats_string(loaddata.h2.describe(), "Height(m)"))
-#
 # helper_functions.plot_hist(loaddata.h2, f'Figure {curr_fig}: Normal Distribution of Pokemon Height(m) (trimmed)', 'Height(m)')
 # plt.show()
-#
 # print(f'{separator + separator}\n')
-#
-#
+# # ----------------------------------------------------------------------------------
+
+
+# # ----------------------------------------------------------------------------------
 # curr_fig = "2b"
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: Normal probablity of Pokemon Height(m) (trimmed) - - -\n')
 # print(loaddata.trim_data)
-#
 # helper_functions.plot_norm_prob(loaddata.h2, y_label='trimmed Heights(m)',
 #                title=f'Figure {curr_fig}: Normal probablity of Pokemon Height(m) (trimmed)')
 # plt.show()
-#
 # print(f'{separator + separator}\n')
-#
+# # ----------------------------------------------------------------------------------
+
+
+# # ----------------------------------------------------------------------------------
 # curr_fig = "2c"
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: Normal CDF of Pokemon Height(m) (trimmed) - - -\n')
 # print(loaddata.trim_data)
 # print(helper_functions.basic_stats_string(loaddata.prob_h_trim_stats, f"Probability(value <=  Height(m)) (trimmed)"))
-#
 # _, _ = helper_functions.plot_cdf(loaddata.h2, title=f"Figure {curr_fig}: Normal CDF of Pokemon Height(m) (trimmed)",
 #                                  x_label='Height(m)', y_label='prob(value $\leq$ height)')
 # plt.show()
-#
 # print(f'{separator + separator}\n')
-#
-#
+# # ----------------------------------------------------------------------------------
+
+
+# # ----------------------------------------------------------------------------------
 # curr_fig = "3"
-#
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: Normal Distribution of Pokemon Height(m) (trimmed) (filtered) - - -\n')
 # print(loaddata.trim_data)
 # print(loaddata.filter_data)
 # print(helper_functions.basic_stats_string(loaddata.filter_freq_data_stats, "Height(m) Frequencies (trimmed) (filtered)"))
-#
 # plt.xlabel("Height(m)")
 # plt.ylabel("Frequency")
 # plt.title(f"Figure {curr_fig}: Normal Distribution of Pokemon Height(m) (trimmed) (filtered)")
 # plt.bar(loaddata.filtered_heights[0], loaddata.filtered_heights[1])
 # plt.show()
-#
 # print(f'{separator + separator}\n')
-#
-# Calculating CDF Dragon vs Non Dragon Types Height(m)
+# # ----------------------------------------------------------------------------------
 
+
+# # ----------------------------------------------------------------------------------
+# Calculating CDF Dragon vs Non Dragon Types Height(m)
 # curr_fig = "4"
-#
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: CDF: Height(m) of Dragon vs Non Dragon Type Pokemon - - -\n')
-#
 # plt.xlabel('Height(m)')
 # plt.ylabel('Probability (Height(m))')
 # plt.title(f"Figure {curr_fig}: CDF: Height(m) of Dragon vs Non Dragon Type Pokemon")
@@ -68,23 +63,27 @@
 # plt.plot(loaddata.dragon_heights_sorted, loaddata.d_cdf, '-b',
 #          loaddata.not_dragon_heights_sorted, loaddata.n_d_cdf, 'r--')
 # plt.show()
-#
 # print(f'{separator + separator}\n')
-#
+# # ----------------------------------------------------------------------------------
 
-# PMF For height of Dragon vs all Pokemon
 
+# # ----------------------------------------------------------------------------------
 # sort by col value, here we are sorting first by type 1 in order a->z then speed highest -> lowest
 # poke.sort_values(['Type 1', 'Speed'], ascending=[1, 1])
+# # ----------------------------------------------------------------------------------
 
 
+# # ----------------------------------------------------------------------------------
 # grouping by type1 with average attack
 # type1_atk = poke[['Type 1', 'Attack']]
 # avg_attack_by_type1 = type1_atk.groupby(['Type 1']).mean().sort_values('Attack', ascending=False)
 # avg_attack_by_type1.rename(columns={'Attack': 'Avg. Atk.'}, inplace=True)
 # avg_attack_by_type1.plot(kind='bar')
 # plt.show()
+# # ----------------------------------------------------------------------------------
 
+
+# # ----------------------------------------------------------------------------------
 ## fire types data analytics
 # gen1_fire = fire_types.loc[fire_types['generation'] == 1]
 # gen2_fire = fire_types.loc[fire_types['generation'] == 2]
@@ -103,56 +102,62 @@
 # stats_gen6_fire = gen6_fire.describe()
 # stats_gen7_fire = gen7_fire.describe()
 # stats_gen8_fire = gen8_fire.describe()
+# # ----------------------------------------------------------------------------------
 
 
-# All Types of Pokemon
+# # ----------------------------------------------------------------------------------
 # Displaying height(m) distribution of all Pokemon
-#
 # curr_fig = "1"
-#
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: Height(m) distribution of all Pokemon - - -\n')
-#
 # print(helper_functions.basic_stats_string(loaddata.height_stats, "Height(m)"))
-#
 # # storing frequencies of different heights of all pokemon here
 # plt.xlabel('Height(m)')
 # plt.ylabel('Frequency')
 # plt.title(f'Figure {curr_fig}: Height(m) distribution of all Pokemon')
 # counts_a = plt.hist(loaddata.height, bins=100)
 # plt.show()
-#
 # print(f'{separator + separator}\n')
-#
-#
+# # ----------------------------------------------------------------------------------
+
+
+# # ----------------------------------------------------------------------------------
 # curr_fig = "1b"
-#
 # # PMF For height(m) of all Pokemon
 # bin_center = (counts_a[1][1:] + counts_a[1][:-1]) / 2
 # all_h_pmf = counts_a[0] / loaddata.num_pokemon
-#
 # print(f'{separator + separator}\n')
 # print(f'{tab * 6}- - - Figure {curr_fig}: PMF: Height(m) of all Pokemon - - -\n')
-#
 # plt.xlabel('Height(m)')
 # plt.ylabel('Probability')
 # plt.title(f'Figure {curr_fig}: PMF: Height(m) of all Pokemon')
 # plt.bar(bin_center, all_h_pmf, width=.2)
 # plt.show()
-#
 # print(f'{separator + separator}\n')
+# # ----------------------------------------------------------------------------------
 
-curr_fig = "3"
 
-print(f'{separator + separator}\n')
-print(f'{tab * 6}- - - Figure {curr_fig}: PMF: Height(m) of Dragon vs all Pokemon - - -\n')
+# # ----------------------------------------------------------------------------------
+# curr_fig = "3"
+# print(f'{separator + separator}\n')
+# print(f'{tab * 6}- - - Figure {curr_fig}: PMF: Height(m) of Dragon vs all Pokemon - - -\n')
+# plt.xlabel('Height(m)')
+# plt.ylabel('Probability')
+# plt.title(f"Figure {curr_fig}: PMF: Height(m) of Dragon vs all Pokemon")
+# plt.legend(('Dragon Type', 'All Pokemon'))
+# plt.plot(bin_center_d, dragon_h_pmf, '-o',
+#          bin_center, all_h_pmf, '-+')
+# plt.show()
+# print(f'{separator + separator}\n')
+# # ----------------------------------------------------------------------------------
 
-plt.xlabel('Height(m)')
-plt.ylabel('Probability')
-plt.title(f"Figure {curr_fig}: PMF: Height(m) of Dragon vs all Pokemon")
-plt.legend(('Dragon Type', 'All Pokemon'))
-plt.plot(bin_center_d, dragon_h_pmf, '-o',
-         bin_center, all_h_pmf, '-+')
-plt.show()
 
-print(f'{separator + separator}\n')
+# # ----------------------------------------------------------------------------------
+# curr_fig = "1d"
+# print(f'{separator + separator}\n')
+# print(f'{tab * 6}- - - Figure {curr_fig}: Dragon Type Weight(kg) - - -\n')
+# loaddata.dragon_types[['weight_kg']].boxplot()
+# plt.title(f"Figure {curr_fig}: Dragon Type Weight(m)")
+# plt.show()
+# print(f'{separator + separator}\n')
+# # ----------------------------------------------------------------------------------

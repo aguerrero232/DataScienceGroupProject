@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import loaddata
 
 tab: str = "\t"
 
@@ -88,15 +87,15 @@ def basic_stats_string(x_stats, x_label='x'):
     return stats_string
 
 
-def data_set_stats(pokemon_data_set, name="Pokemon"):
+def data_set_stats(pokemon_data_set, name="Pokemon", total_attr=20, study_attr=9, cols=[], z_cols=[]):
 
     pokemon_set_data = f"{tab * 4}{name} Characteristics\n" + \
                   f"{tab * 5}Number of {name}: {len(pokemon_data_set)}\n" \
-                  f"{tab * 5}Number of Attributes Total: {loaddata.total_attr}\n" + \
-                  f"{tab * 5}Number of Attributes in the Study: {loaddata.study_attr}\n\n\n" + \
+                  f"{tab * 5}Number of Attributes Total: {total_attr}\n" + \
+                  f"{tab * 5}Number of Attributes in the Study: {study_attr}\n\n\n" + \
                   f"{tab * 10}- - - Attribute Information - - -\n\n"
-    for col in loaddata.cols:
-        if col in loaddata.z_cols:
+    for col in cols:
+        if col in z_cols:
             pokemon_set_data += f"{tab * 8}* {col} (in study)\n"
         else:
             pokemon_set_data += f"{tab * 8}* {col}\n"

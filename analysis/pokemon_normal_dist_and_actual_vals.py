@@ -187,7 +187,7 @@ low = (test_low - loaddata.h2.mean()) / loaddata.h2.std()
 #   to find area between you just subtract high-low
 #
 print(f"{tab * 4}What percentage of Pokemon Heights(m) are between {test_low}m and {test_high}m? (trimmed)\n")
-print(loaddata.trim_data)
+print(loaddata.trim_data_h)
 print(f'{tab * 5}Answer: {n} / {len(loaddata.h2)} = {round((100 * p), 3)}%')
 print(f'{tab * 5}Theory: {round((100 * (scipy.stats.norm.cdf(high) - scipy.stats.norm.cdf(low))), 3)}%\n')
 print(f'{separator + separator}\n')
