@@ -5,7 +5,6 @@ import helper_functions
 
 stat_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed']
 physical_attr_cols = ['height_m', 'weight_kg']
-separator = '---------------------------------------------------------------'
 tab: str = "\t"
 
 all_pokemon = pd.read_csv('../data/pokedex.csv').dropna(subset=(stat_cols + physical_attr_cols))

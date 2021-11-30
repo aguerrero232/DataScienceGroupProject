@@ -136,12 +136,14 @@ def pokemon_regression_analysis(set_name, set_data, z_set_data, trim_data='', mo
         y_values = np.array(z_set_data[y_cols])
 
     x_train, x_test, y_train, y_test = train_test_split(x_values, y_values, test_size=0.2, random_state=0)
+
     lr = linear_model.LinearRegression()
     lr.fit(x_train, y_train)
     score = lr.score(x_test, y_test) * 100
     co_ef_z_and_d = pd.DataFrame(lr.coef_)
     pred = lr.predict(x_values)
     r2_val = r2(y_values, pred) * 100
+
     print(f'{separator + separator}\n')
     print(f'{tab * 3}- - - Figure {curr_fig}: Linear Regression on {set_name} Data (standardized) {modified_data_tag} '
           f'- - -\n')
