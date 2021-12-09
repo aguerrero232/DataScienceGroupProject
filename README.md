@@ -8,17 +8,15 @@ Hunter Long
 ## --------------------- File Descriptions ---------------------
 
 # Folder: analysis/
-### loaddata.py
-* Contains project data statistical analysis used throught analysis files
+
+## analysis.py
+* Main driver of the program, run this file to start up the project
 
 ### helper_functions.py
 * Contain functions that prove useful for statistical analysis and plotting
 
-### pokemon_attack_stat_analysis.py
-* Analysis of pokemon attack stat, distribution, standardized distribution, SEM, SEM+95% Confidence Interval
-
-### pokemon_simple_correlation.py
-* Various correlations of different stats shared among Pokemon. hp / speed, attack/ sp_attack, height/weight, etc...
+### loaddata.py
+* Contains project data statistical analysis used throught analysis files
 
 ### pokemon_normal_dist_and_actual_vals.py
 * Using standard normal distribution for quick probability estimation for all pokemon Heights(m) and Weights(kg) (can be extended for more categories)
@@ -26,11 +24,17 @@ Hunter Long
 ### pokemon_normal_or_log.py
 * Normal and Log Distributions of pokemon heights and weights. Are Pokemon heights, and weights normally distributed? Let's find out.
 
+### pokemon_regression    
+* runs linear regression on selected pokemon set 
+
+### pokemon_simple_correlation.py
+* Various correlations of different stats shared among Pokemon. hp / speed, attack/ sp_attack, height/weight, etc...
+
+### pokemon_stat_analysis.py
+* Analysis of pokemon stat points; distribution, standardized distribution, SEM, SEM+95% Confidence Interval
+
 ### pokemon_test_are_dragons_taller
 * Do Dragon Type Pokemon tend to be taller than Non Dragon Type Pokemon?
-
-### pokemon_regression    
-* IN PROGRESS
 
 # Folder: data/
 ### pokedex.csv

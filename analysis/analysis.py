@@ -5126,19 +5126,8 @@ def do_stat_analysis_full(option):
     return
 
 
-def print_options_home():
-    ret_str = f"\n{tab * 4}1: Stat Analysis\n" + \
-              f"{tab * 4}2: Are Pokemon Heights Normal or Log distributed?\n" + \
-              f"{tab * 4}3: Random Pokemon Correlations\n" + \
-              f"{tab * 4}4: Testing Normal Distribution against Actual Values\n" + \
-              f"{tab * 4}5: Are Dragon Types Taller Than Non Dragon Types?\n" + \
-              f"{tab * 4}6: Pokemon Regression Analysis\n" + \
-              f"{tab * 5}0: Exit"
-    print(ret_str)
-
-
 def print_options_sets():
-    ret_str = f"\n{tab * 4}- - - Select Your Specific Pokemon Data Set - - -\n" + \
+    ret_str = f"\n{tab * 6}- - - Select Your Specific Pokemon Data Set - - -\n" + \
               f"\n{tab * 4}1: Full Data\n" \
               f" {tab * 4}2: Trimmed Data\n" + \
               f"{tab * 4}3: Non Legendary Pokemon\n" + \
@@ -5150,8 +5139,9 @@ def print_options_sets():
 def print_options_types(modifier=''):
     ret_str = f""
     if len(modifier) > 0:
-        ret_str += f"\n{tab * 4}- - - {modifier} - - -\n"
-
+        ret_str += f"\n{tab * 6}- - - Select {modifier} Type  - - -\n"
+    else:
+        ret_str += f"\n{tab * 6}- - - Select Type - - -\n"
     ret_str += f"\n{tab * 4}1: Grass Types {tab * 3}2: Fire Types\n" + \
                f"{tab * 4}3: Water Types {tab * 3}4: Electric Types\n" + \
                f"{tab * 4}5: Psychic Types {tab * 2}6: Ice Types\n" + \
@@ -5163,7 +5153,7 @@ def print_options_types(modifier=''):
                f"{tab * 4}17: Ghost Types {tab * 2}18: Steel Types\n"
 
     if modifier == "Trimmed":
-        ret_str += f"{tab * 4}19: Pokemon (trimmed Height(m) & Weight(kg))\n"
+        ret_str += f"{tab * 4}19: All Pokemon (trimmed Height(m) & Weight(kg))\n"
     else:
         ret_str += f"{tab * 4}19: Entire Set\n"
 
@@ -5174,8 +5164,9 @@ def print_options_types(modifier=''):
 def print_options_stats(modifier=''):
     ret_str = f""
     if len(modifier) > 0:
-        ret_str += f"\n{tab * 4}- - - {modifier} - - -\n"
-
+        ret_str += f"\n{tab * 6}- - - Select {modifier} Stat - - -\n"
+    else:
+        ret_str += f"\n{tab * 6}- - - Select Stat - - -\n"
     ret_str += f"\n{tab * 6}1: Stat Totals\n" + \
                f"{tab * 4}2: HP{tab * 5}3: Speed\n" + \
                f"{tab * 4}4: Attack{tab * 4}5: Defense\n" + \
@@ -5186,14 +5177,27 @@ def print_options_stats(modifier=''):
     print(ret_str)
 
 
+def print_options_home():
+
+    ret_str = f"\n{tab * 6} - - - OPTIONS - - - \n" + \
+              f"\n{tab * 4}1: Stat Analysis\n" + \
+              f"{tab * 4}2: Pokemon Regression Analysis\n" + \
+              f"{tab * 4}3: Testing Normal Distribution against Actual Values\n" + \
+              f"{tab * 4}4: Are Pokemon Heights Normal or Log distributed?\n" + \
+              f"{tab * 4}5: Random Pokemon Correlations\n" + \
+              f"{tab * 4}6: Are Dragon Types Taller Than Non Dragon Types?\n" + \
+              f"{tab * 5}0: Exit\n"
+
+    print(ret_str)
+
+
 if __name__ == "__main__":
 
     while 1:
         print_options_home()
         val_home = input(f"\n{tab * 2}Enter Desired Option: ")
-        print(val_home)
-        if val_home == "1":
 
+        if val_home == "1":
             print_options_sets()
             val_opt_set = input(f"\n{tab * 2}Enter Option: ")
 
@@ -5208,7 +5212,7 @@ if __name__ == "__main__":
 
             elif val_opt_set == "2":
                 # print options stat analysis trimmed
-                print_options_types("Trimmed")
+                print_options_stats("Trimmed")
                 val_opt_stat = input(f"\n{tab * 2}Enter Option: ")
                 if val_opt_stat == "0":
                     break
@@ -5217,7 +5221,7 @@ if __name__ == "__main__":
 
             elif val_opt_set == "3":
                 # print options stat analysis non legendary
-                print_options_types("Non Legendary Pokemon")
+                print_options_stats("Non Legendary Pokemon")
                 val_opt_stat = input(f"\n{tab * 2}Enter Option: ")
                 if val_opt_stat == "0":
                     break
@@ -5226,7 +5230,7 @@ if __name__ == "__main__":
 
             elif val_opt_set == "4":
                 # print options stat analysis legendary
-                print_options_types("Legendary Pokemon")
+                print_options_stats("Legendary Pokemon")
                 val_opt_stat = input(f"\n{tab * 2}Enter Option: ")
                 if val_opt_stat == "0":
                     break
@@ -5237,36 +5241,6 @@ if __name__ == "__main__":
                 break
             continue
         elif val_home == "2":
-            print(f"{tab * 4} Are Pokemon Heights Normal or Log distributed?")
-            continue
-        elif val_home == "3":
-            print(f"{tab * 4} Random Pokemon Correlations")
-            continue
-        elif val_home == "4":
-            # print(f"{tab * 4}Testing Normal Distribution against Actual Values")
-            print_options_sets()
-            val_opt_set = input(f"\n{tab * 2}Enter Option: ")
-            if val_opt_set == "0":
-                break
-            else:
-                # print options stat analysis full
-                print_options_types()
-                val_opt_type = input(f"\n{tab * 2}Enter Option: ")
-                if val_opt_type == "0":
-                    break
-                else:
-                    print_options_stats()
-                    val_opt_stat = input(f"\n{tab * 2}Enter Option: ")
-                    if val_opt_stat == "0":
-                        break
-                    else:
-                        do_normal_dist_against_actual_values([val_opt_set, val_opt_type, val_opt_stat])
-
-            continue
-        elif val_home == "5":
-            pokemon_test_are_dragons_taller.are_dragons_taller()
-            continue
-        elif val_home == "6":
             print_options_sets()
             val_opt_set = input(f"\n{tab * 2}Enter Option: ")
 
@@ -5314,6 +5288,35 @@ if __name__ == "__main__":
                 break
 
             continue
+        elif val_home == "3":
+            # print(f"{tab * 4}Testing Normal Distribution against Actual Values")
+            print_options_sets()
+            val_opt_set = input(f"\n{tab * 2}Enter Option: ")
+            if val_opt_set == "0":
+                break
+            else:
+                # print options stat analysis full
+                print_options_types()
+                val_opt_type = input(f"\n{tab * 2}Enter Option: ")
+                if val_opt_type == "0":
+                    break
+                else:
+                    print_options_stats()
+                    val_opt_stat = input(f"\n{tab * 2}Enter Option: ")
+                    if val_opt_stat == "0":
+                        break
+                    else:
+                        do_normal_dist_against_actual_values([val_opt_set, val_opt_type, val_opt_stat])
+
+            continue
+        elif val_home == "4":
+            print(f"{tab * 4} Are Pokemon Heights Normal or Log distributed?")
+            continue
+        elif val_home == "5":
+            print(f"{tab * 4} Random Pokemon Correlations")
+            continue
+        elif val_home == "6":
+            pokemon_test_are_dragons_taller.are_dragons_taller()
         else:
             print("Exit")
             break

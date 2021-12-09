@@ -92,11 +92,9 @@ def data_set_stats(pokemon_data_set, name="Pokemon", total_attr=20, study_attr=9
                        f"{tab * 5}Number of {name}: {len(pokemon_data_set)}\n" \
                        f"{tab * 5}Number of Attributes Total: {total_attr}\n" + \
                        f"{tab * 5}Number of Attributes in the Study: {study_attr}\n\n\n" + \
-                       f"{tab * 10}- - - Attribute Information - - -\n\n"
+                       f"{tab * 10}- - - Attribute in study Information - - -\n\n"
     for col in cols:
         if col in z_cols:
-            pokemon_set_data += f"{tab * 8}* {col} (in study)\n"
-        else:
             pokemon_set_data += f"{tab * 8}* {col}\n"
 
     return pokemon_set_data
