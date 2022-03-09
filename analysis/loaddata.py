@@ -7,7 +7,9 @@ stat_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed']
 physical_attr_cols = ['height_m', 'weight_kg']
 tab: str = "\t"
 
-all_pokemon = pd.read_csv('../data/pokedex.csv').dropna(subset=(stat_cols + physical_attr_cols))
+all_pokemon = pd.read_csv('./data/pokedex.csv').dropna(
+    subset=(stat_cols + physical_attr_cols))
+
 # length
 num_pokemon = len(all_pokemon)
 # ---------------------------------------
@@ -18,7 +20,8 @@ total_attr = len(cols)  # count of col labels
 # ------------------------------------------------------------------------------------------------
 
 # --- z score column labels for Pokemon ----------------------------------------------------------------------------
-z_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense', 'speed', 'total_points', 'weight_kg', 'height_m']
+z_cols = ['hp', 'attack', 'defense', 'sp_attack', 'sp_defense',
+          'speed', 'total_points', 'weight_kg', 'height_m']
 study_attr = len(z_cols)  # count of z col labels
 # ------------------------------------------------------------------------------------------------------------------
 
@@ -62,7 +65,8 @@ num_trim_pokemon = len(pkm_trim_hw)
 
 # ---------------------------------------------------------------------------------------------------------------
 # legendary pokemon (including mythical)
-legendary_pokemon = all_pokemon.loc[(all_pokemon['is_legendary'] == 1) | (all_pokemon['is_mythical'] == 1)]
+legendary_pokemon = all_pokemon.loc[(
+    all_pokemon['is_legendary'] == 1) | (all_pokemon['is_mythical'] == 1)]
 
 # length
 num_legendary = len(legendary_pokemon)
@@ -71,7 +75,8 @@ num_legendary = len(legendary_pokemon)
 
 # ---------------------------------------------------------------------------------------------------------------
 # non legendary pokemon (including mythical)
-non_legendary_pokemon = all_pokemon.loc[(all_pokemon['is_legendary'] == 0) & (all_pokemon['is_mythical'] == 0)]
+non_legendary_pokemon = all_pokemon.loc[(
+    all_pokemon['is_legendary'] == 0) & (all_pokemon['is_mythical'] == 0)]
 
 # length
 num_non_legendary = len(non_legendary_pokemon)
@@ -80,98 +85,165 @@ num_non_legendary = len(non_legendary_pokemon)
 
 # -------------------------------------------------------------------------------------------------------------
 # grouping by type (all)
-fire_types = all_pokemon.loc[(all_pokemon['type_1'] == "Fire") | (all_pokemon['type_2'] == "Fire")]
-water_types = all_pokemon.loc[(all_pokemon['type_1'] == "Water") | (all_pokemon['type_2'] == "Water")]
-grass_types = all_pokemon.loc[(all_pokemon['type_1'] == "Grass") | (all_pokemon['type_2'] == "Grass")]
-electric_types = all_pokemon.loc[(all_pokemon['type_1'] == "Electric") | (all_pokemon['type_2'] == "Electric")]
-normal_types = all_pokemon.loc[(all_pokemon['type_1'] == "Normal") | (all_pokemon['type_2'] == "Normal")]
-ground_types = all_pokemon.loc[(all_pokemon['type_1'] == "Ground") | (all_pokemon['type_2'] == "Ground")]
-rock_types = all_pokemon.loc[(all_pokemon['type_1'] == "Rock") | (all_pokemon['type_2'] == "Rock")]
-steel_types = all_pokemon.loc[(all_pokemon['type_1'] == "Steel") | (all_pokemon['type_2'] == "Steel")]
-ice_types = all_pokemon.loc[(all_pokemon['type_1'] == "Ice") | (all_pokemon['type_2'] == "Ice")]
-flying_types = all_pokemon.loc[(all_pokemon['type_1'] == "Flying") | (all_pokemon['type_2'] == "Flying")]
-fighting_types = all_pokemon.loc[(all_pokemon['type_1'] == "Fighting") | (all_pokemon['type_2'] == "Fighting")]
-poison_types = all_pokemon.loc[(all_pokemon['type_1'] == "Poison") | (all_pokemon['type_2'] == "Poison")]
-psychic_types = all_pokemon.loc[(all_pokemon['type_1'] == "Psychic") | (all_pokemon['type_2'] == "Psychic")]
-bug_types = all_pokemon.loc[(all_pokemon['type_1'] == "Bug") | (all_pokemon['type_2'] == "Bug")]
-ghost_types = all_pokemon.loc[(all_pokemon['type_1'] == "Ghost") | (all_pokemon['type_2'] == "Ghost")]
-dark_types = all_pokemon.loc[(all_pokemon['type_1'] == "Dark") | (all_pokemon['type_2'] == "Dark")]
-dragon_types = all_pokemon.loc[(all_pokemon['type_1'] == "Dragon") | (all_pokemon['type_2'] == "Dragon")]
-fairy_types = all_pokemon.loc[(all_pokemon['type_1'] == "Fairy") | (all_pokemon['type_2'] == "Fairy")]
+fire_types = all_pokemon.loc[(all_pokemon['type_1'] == "Fire") | (
+    all_pokemon['type_2'] == "Fire")]
+water_types = all_pokemon.loc[(all_pokemon['type_1'] == "Water") | (
+    all_pokemon['type_2'] == "Water")]
+grass_types = all_pokemon.loc[(all_pokemon['type_1'] == "Grass") | (
+    all_pokemon['type_2'] == "Grass")]
+electric_types = all_pokemon.loc[(all_pokemon['type_1'] == "Electric") | (
+    all_pokemon['type_2'] == "Electric")]
+normal_types = all_pokemon.loc[(all_pokemon['type_1'] == "Normal") | (
+    all_pokemon['type_2'] == "Normal")]
+ground_types = all_pokemon.loc[(all_pokemon['type_1'] == "Ground") | (
+    all_pokemon['type_2'] == "Ground")]
+rock_types = all_pokemon.loc[(all_pokemon['type_1'] == "Rock") | (
+    all_pokemon['type_2'] == "Rock")]
+steel_types = all_pokemon.loc[(all_pokemon['type_1'] == "Steel") | (
+    all_pokemon['type_2'] == "Steel")]
+ice_types = all_pokemon.loc[(all_pokemon['type_1'] == "Ice") | (
+    all_pokemon['type_2'] == "Ice")]
+flying_types = all_pokemon.loc[(all_pokemon['type_1'] == "Flying") | (
+    all_pokemon['type_2'] == "Flying")]
+fighting_types = all_pokemon.loc[(all_pokemon['type_1'] == "Fighting") | (
+    all_pokemon['type_2'] == "Fighting")]
+poison_types = all_pokemon.loc[(all_pokemon['type_1'] == "Poison") | (
+    all_pokemon['type_2'] == "Poison")]
+psychic_types = all_pokemon.loc[(all_pokemon['type_1'] == "Psychic") | (
+    all_pokemon['type_2'] == "Psychic")]
+bug_types = all_pokemon.loc[(all_pokemon['type_1'] == "Bug") | (
+    all_pokemon['type_2'] == "Bug")]
+ghost_types = all_pokemon.loc[(all_pokemon['type_1'] == "Ghost") | (
+    all_pokemon['type_2'] == "Ghost")]
+dark_types = all_pokemon.loc[(all_pokemon['type_1'] == "Dark") | (
+    all_pokemon['type_2'] == "Dark")]
+dragon_types = all_pokemon.loc[(all_pokemon['type_1'] == "Dragon") | (
+    all_pokemon['type_2'] == "Dragon")]
+fairy_types = all_pokemon.loc[(all_pokemon['type_1'] == "Fairy") | (
+    all_pokemon['type_2'] == "Fairy")]
 # ---------------------------------------------------------------------------------------------------------------
 
 
 # -------------------------------------------------------------------------------------------------------------
 # grouping by type (trimmed)
-trimmed_fire_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Fire") | (pkm_trim_hw['type_2'] == "Fire")]
-trimmed_water_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Water") | (pkm_trim_hw['type_2'] == "Water")]
-trimmed_grass_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Grass") | (pkm_trim_hw['type_2'] == "Grass")]
-trimmed_electric_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Electric") | (pkm_trim_hw['type_2'] == "Electric")]
-trimmed_normal_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Normal") | (pkm_trim_hw['type_2'] == "Normal")]
-trimmed_ground_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Ground") | (pkm_trim_hw['type_2'] == "Ground")]
-trimmed_rock_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Rock") | (pkm_trim_hw['type_2'] == "Rock")]
-trimmed_steel_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Steel") | (pkm_trim_hw['type_2'] == "Steel")]
-trimmed_ice_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Ice") | (pkm_trim_hw['type_2'] == "Ice")]
-trimmed_flying_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Flying") | (pkm_trim_hw['type_2'] == "Flying")]
-trimmed_fighting_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Fighting") | (pkm_trim_hw['type_2'] == "Fighting")]
-trimmed_poison_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Poison") | (pkm_trim_hw['type_2'] == "Poison")]
-trimmed_psychic_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Psychic") | (pkm_trim_hw['type_2'] == "Psychic")]
-trimmed_bug_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Bug") | (pkm_trim_hw['type_2'] == "Bug")]
-trimmed_ghost_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Ghost") | (pkm_trim_hw['type_2'] == "Ghost")]
-trimmed_dark_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Dark") | (pkm_trim_hw['type_2'] == "Dark")]
-trimmed_dragon_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Dragon") | (pkm_trim_hw['type_2'] == "Dragon")]
-trimmed_fairy_types = pkm_trim_hw.loc[(pkm_trim_hw['type_1'] == "Fairy") | (pkm_trim_hw['type_2'] == "Fairy")]
+trimmed_fire_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Fire") | (pkm_trim_hw['type_2'] == "Fire")]
+trimmed_water_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Water") | (pkm_trim_hw['type_2'] == "Water")]
+trimmed_grass_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Grass") | (pkm_trim_hw['type_2'] == "Grass")]
+trimmed_electric_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Electric") | (pkm_trim_hw['type_2'] == "Electric")]
+trimmed_normal_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Normal") | (pkm_trim_hw['type_2'] == "Normal")]
+trimmed_ground_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Ground") | (pkm_trim_hw['type_2'] == "Ground")]
+trimmed_rock_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Rock") | (pkm_trim_hw['type_2'] == "Rock")]
+trimmed_steel_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Steel") | (pkm_trim_hw['type_2'] == "Steel")]
+trimmed_ice_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Ice") | (pkm_trim_hw['type_2'] == "Ice")]
+trimmed_flying_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Flying") | (pkm_trim_hw['type_2'] == "Flying")]
+trimmed_fighting_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Fighting") | (pkm_trim_hw['type_2'] == "Fighting")]
+trimmed_poison_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Poison") | (pkm_trim_hw['type_2'] == "Poison")]
+trimmed_psychic_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Psychic") | (pkm_trim_hw['type_2'] == "Psychic")]
+trimmed_bug_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Bug") | (pkm_trim_hw['type_2'] == "Bug")]
+trimmed_ghost_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Ghost") | (pkm_trim_hw['type_2'] == "Ghost")]
+trimmed_dark_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Dark") | (pkm_trim_hw['type_2'] == "Dark")]
+trimmed_dragon_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Dragon") | (pkm_trim_hw['type_2'] == "Dragon")]
+trimmed_fairy_types = pkm_trim_hw.loc[(
+    pkm_trim_hw['type_1'] == "Fairy") | (pkm_trim_hw['type_2'] == "Fairy")]
 # -----------------------------------------------------------------------------------------------------------------
 
 
 # -------------------------------------------------------------------------------------------------------------
 # grouping by type (legendary)
-legendary_fire_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Fire") | (legendary_pokemon['type_2'] == "Fire")]
-legendary_water_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Water") | (legendary_pokemon['type_2'] == "Water")]
-legendary_grass_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Grass") | (legendary_pokemon['type_2'] == "Grass")]
+legendary_fire_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Fire") | (legendary_pokemon['type_2'] == "Fire")]
+legendary_water_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Water") | (legendary_pokemon['type_2'] == "Water")]
+legendary_grass_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Grass") | (legendary_pokemon['type_2'] == "Grass")]
 legendary_electric_types = legendary_pokemon.loc[
     (legendary_pokemon['type_1'] == "Electric") | (legendary_pokemon['type_2'] == "Electric")]
-legendary_normal_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Normal") | (legendary_pokemon['type_2'] == "Normal")]
-legendary_ground_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Ground") | (legendary_pokemon['type_2'] == "Ground")]
-legendary_rock_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Rock") | (legendary_pokemon['type_2'] == "Rock")]
-legendary_steel_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Steel") | (legendary_pokemon['type_2'] == "Steel")]
-legendary_ice_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Ice") | (legendary_pokemon['type_2'] == "Ice")]
-legendary_flying_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Flying") | (legendary_pokemon['type_2'] == "Flying")]
+legendary_normal_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Normal") | (legendary_pokemon['type_2'] == "Normal")]
+legendary_ground_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Ground") | (legendary_pokemon['type_2'] == "Ground")]
+legendary_rock_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Rock") | (legendary_pokemon['type_2'] == "Rock")]
+legendary_steel_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Steel") | (legendary_pokemon['type_2'] == "Steel")]
+legendary_ice_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Ice") | (legendary_pokemon['type_2'] == "Ice")]
+legendary_flying_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Flying") | (legendary_pokemon['type_2'] == "Flying")]
 legendary_fighting_types = legendary_pokemon.loc[
     (legendary_pokemon['type_1'] == "Fighting") | (legendary_pokemon['type_2'] == "Fighting")]
-legendary_poison_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Poison") | (legendary_pokemon['type_2'] == "Poison")]
-legendary_psychic_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Psychic") | (legendary_pokemon['type_2'] == "Psychic")]
-legendary_bug_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Bug") | (legendary_pokemon['type_2'] == "Bug")]
-legendary_ghost_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Ghost") | (legendary_pokemon['type_2'] == "Ghost")]
-legendary_dark_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Dark") | (legendary_pokemon['type_2'] == "Dark")]
-legendary_dragon_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Dragon") | (legendary_pokemon['type_2'] == "Dragon")]
-legendary_fairy_types = legendary_pokemon.loc[(legendary_pokemon['type_1'] == "Fairy") | (legendary_pokemon['type_2'] == "Fairy")]
+legendary_poison_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Poison") | (legendary_pokemon['type_2'] == "Poison")]
+legendary_psychic_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Psychic") | (legendary_pokemon['type_2'] == "Psychic")]
+legendary_bug_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Bug") | (legendary_pokemon['type_2'] == "Bug")]
+legendary_ghost_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Ghost") | (legendary_pokemon['type_2'] == "Ghost")]
+legendary_dark_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Dark") | (legendary_pokemon['type_2'] == "Dark")]
+legendary_dragon_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Dragon") | (legendary_pokemon['type_2'] == "Dragon")]
+legendary_fairy_types = legendary_pokemon.loc[(
+    legendary_pokemon['type_1'] == "Fairy") | (legendary_pokemon['type_2'] == "Fairy")]
 # ---------------------------------------------------------------------------------------------------------------
 
 
 # -------------------------------------------------------------------------------------------------------------
 # grouping by type (non legendary)
-non_legendary_fire_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Fire") | (non_legendary_pokemon['type_2'] == "Fire")]
-non_legendary_water_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Water") | (non_legendary_pokemon['type_2'] == "Water")]
-non_legendary_grass_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Grass") | (non_legendary_pokemon['type_2'] == "Grass")]
+non_legendary_fire_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Fire") | (non_legendary_pokemon['type_2'] == "Fire")]
+non_legendary_water_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Water") | (non_legendary_pokemon['type_2'] == "Water")]
+non_legendary_grass_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Grass") | (non_legendary_pokemon['type_2'] == "Grass")]
 non_legendary_electric_types = non_legendary_pokemon.loc[
     (non_legendary_pokemon['type_1'] == "Electric") | (non_legendary_pokemon['type_2'] == "Electric")]
-non_legendary_normal_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Normal") | (non_legendary_pokemon['type_2'] == "Normal")]
-non_legendary_ground_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Ground") | (non_legendary_pokemon['type_2'] == "Ground")]
-non_legendary_rock_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Rock") | (non_legendary_pokemon['type_2'] == "Rock")]
-non_legendary_steel_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Steel") | (non_legendary_pokemon['type_2'] == "Steel")]
-non_legendary_ice_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Ice") | (non_legendary_pokemon['type_2'] == "Ice")]
-non_legendary_flying_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Flying") | (non_legendary_pokemon['type_2'] == "Flying")]
+non_legendary_normal_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Normal") | (non_legendary_pokemon['type_2'] == "Normal")]
+non_legendary_ground_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Ground") | (non_legendary_pokemon['type_2'] == "Ground")]
+non_legendary_rock_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Rock") | (non_legendary_pokemon['type_2'] == "Rock")]
+non_legendary_steel_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Steel") | (non_legendary_pokemon['type_2'] == "Steel")]
+non_legendary_ice_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Ice") | (non_legendary_pokemon['type_2'] == "Ice")]
+non_legendary_flying_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Flying") | (non_legendary_pokemon['type_2'] == "Flying")]
 non_legendary_fighting_types = non_legendary_pokemon.loc[
     (non_legendary_pokemon['type_1'] == "Fighting") | (non_legendary_pokemon['type_2'] == "Fighting")]
-non_legendary_poison_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Poison") | (non_legendary_pokemon['type_2'] == "Poison")]
+non_legendary_poison_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Poison") | (non_legendary_pokemon['type_2'] == "Poison")]
 non_legendary_psychic_types = non_legendary_pokemon.loc[
     (non_legendary_pokemon['type_1'] == "Psychic") | (non_legendary_pokemon['type_2'] == "Psychic")]
-non_legendary_bug_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Bug") | (non_legendary_pokemon['type_2'] == "Bug")]
-non_legendary_ghost_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Ghost") | (non_legendary_pokemon['type_2'] == "Ghost")]
-non_legendary_dark_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Dark") | (non_legendary_pokemon['type_2'] == "Dark")]
-non_legendary_dragon_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Dragon") | (non_legendary_pokemon['type_2'] == "Dragon")]
-non_legendary_fairy_types = non_legendary_pokemon.loc[(non_legendary_pokemon['type_1'] == "Fairy") | (non_legendary_pokemon['type_2'] == "Fairy")]
+non_legendary_bug_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Bug") | (non_legendary_pokemon['type_2'] == "Bug")]
+non_legendary_ghost_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Ghost") | (non_legendary_pokemon['type_2'] == "Ghost")]
+non_legendary_dark_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Dark") | (non_legendary_pokemon['type_2'] == "Dark")]
+non_legendary_dragon_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Dragon") | (non_legendary_pokemon['type_2'] == "Dragon")]
+non_legendary_fairy_types = non_legendary_pokemon.loc[(
+    non_legendary_pokemon['type_1'] == "Fairy") | (non_legendary_pokemon['type_2'] == "Fairy")]
 # ---------------------------------------------------------------------------------------------------------------
 
 
@@ -358,7 +430,8 @@ z_pokemon_t_h = helper_functions.z_score(pokemon_trimmed_heights[z_cols])
 z_pokemon_t_w = helper_functions.z_score(pokemon_trimmed_weights[z_cols])
 z_trimmed_pokemon = helper_functions.z_score(pkm_trim_hw[z_cols])
 z_pokemon_legendary = helper_functions.z_score(legendary_pokemon[z_cols])
-z_pokemon_non_legendary = helper_functions.z_score(non_legendary_pokemon[z_cols])
+z_pokemon_non_legendary = helper_functions.z_score(
+    non_legendary_pokemon[z_cols])
 # ------------------------------------------------------------------------------
 # z scores for pokemon stat values (all)
 z_total_points = helper_functions.z_score(total_points)
@@ -421,7 +494,8 @@ z_legendary_height = helper_functions.z_score(legendary_height)
 z_legendary_height_stats = z_legendary_height.describe()
 # ------------------------------------------------------------------------------
 # z scores for pokemon stat values (non legendary)
-z_non_legendary_total_points = helper_functions.z_score(non_legendary_total_points)
+z_non_legendary_total_points = helper_functions.z_score(
+    non_legendary_total_points)
 z_non_legendary_total_points_stats = z_non_legendary_total_points.describe()
 z_non_legendary_hp = helper_functions.z_score(non_legendary_hp)
 z_non_legendary_hp_stats = z_non_legendary_hp.describe()
@@ -487,11 +561,13 @@ z_trimmed_dragon = helper_functions.z_score(trimmed_dragon_types[z_cols])
 z_legendary_fire = helper_functions.z_score(legendary_fire_types[z_cols])
 z_legendary_water = helper_functions.z_score(legendary_water_types[z_cols])
 z_legendary_grass = helper_functions.z_score(legendary_grass_types[z_cols])
-z_legendary_electric = helper_functions.z_score(legendary_electric_types[z_cols])
+z_legendary_electric = helper_functions.z_score(
+    legendary_electric_types[z_cols])
 z_legendary_psychic = helper_functions.z_score(legendary_psychic_types[z_cols])
 z_legendary_ghost = helper_functions.z_score(legendary_ghost_types[z_cols])
 z_legendary_normal = helper_functions.z_score(legendary_normal_types[z_cols])
-z_legendary_fighting = helper_functions.z_score(legendary_fighting_types[z_cols])
+z_legendary_fighting = helper_functions.z_score(
+    legendary_fighting_types[z_cols])
 z_legendary_ice = helper_functions.z_score(legendary_ice_types[z_cols])
 z_legendary_dark = helper_functions.z_score(legendary_dark_types[z_cols])
 z_legendary_fairy = helper_functions.z_score(legendary_fairy_types[z_cols])
@@ -504,29 +580,46 @@ z_legendary_flying = helper_functions.z_score(legendary_flying_types[z_cols])
 z_legendary_dragon = helper_functions.z_score(legendary_dragon_types[z_cols])
 # ------------------------------------------------------------------------------
 # pokemon type z scores (non legendary)
-z_non_legendary_fire = helper_functions.z_score(non_legendary_fire_types[z_cols])
-z_non_legendary_water = helper_functions.z_score(non_legendary_water_types[z_cols])
-z_non_legendary_grass = helper_functions.z_score(non_legendary_grass_types[z_cols])
-z_non_legendary_electric = helper_functions.z_score(non_legendary_electric_types[z_cols])
-z_non_legendary_psychic = helper_functions.z_score(non_legendary_psychic_types[z_cols])
-z_non_legendary_ghost = helper_functions.z_score(non_legendary_ghost_types[z_cols])
-z_non_legendary_normal = helper_functions.z_score(non_legendary_normal_types[z_cols])
-z_non_legendary_fighting = helper_functions.z_score(non_legendary_fighting_types[z_cols])
+z_non_legendary_fire = helper_functions.z_score(
+    non_legendary_fire_types[z_cols])
+z_non_legendary_water = helper_functions.z_score(
+    non_legendary_water_types[z_cols])
+z_non_legendary_grass = helper_functions.z_score(
+    non_legendary_grass_types[z_cols])
+z_non_legendary_electric = helper_functions.z_score(
+    non_legendary_electric_types[z_cols])
+z_non_legendary_psychic = helper_functions.z_score(
+    non_legendary_psychic_types[z_cols])
+z_non_legendary_ghost = helper_functions.z_score(
+    non_legendary_ghost_types[z_cols])
+z_non_legendary_normal = helper_functions.z_score(
+    non_legendary_normal_types[z_cols])
+z_non_legendary_fighting = helper_functions.z_score(
+    non_legendary_fighting_types[z_cols])
 z_non_legendary_ice = helper_functions.z_score(non_legendary_ice_types[z_cols])
-z_non_legendary_dark = helper_functions.z_score(non_legendary_dark_types[z_cols])
-z_non_legendary_fairy = helper_functions.z_score(non_legendary_fairy_types[z_cols])
-z_non_legendary_poison = helper_functions.z_score(non_legendary_poison_types[z_cols])
-z_non_legendary_ground = helper_functions.z_score(non_legendary_ground_types[z_cols])
-z_non_legendary_rock = helper_functions.z_score(non_legendary_rock_types[z_cols])
-z_non_legendary_steel = helper_functions.z_score(non_legendary_steel_types[z_cols])
+z_non_legendary_dark = helper_functions.z_score(
+    non_legendary_dark_types[z_cols])
+z_non_legendary_fairy = helper_functions.z_score(
+    non_legendary_fairy_types[z_cols])
+z_non_legendary_poison = helper_functions.z_score(
+    non_legendary_poison_types[z_cols])
+z_non_legendary_ground = helper_functions.z_score(
+    non_legendary_ground_types[z_cols])
+z_non_legendary_rock = helper_functions.z_score(
+    non_legendary_rock_types[z_cols])
+z_non_legendary_steel = helper_functions.z_score(
+    non_legendary_steel_types[z_cols])
 z_non_legendary_bug = helper_functions.z_score(non_legendary_bug_types[z_cols])
-z_non_legendary_flying = helper_functions.z_score(non_legendary_flying_types[z_cols])
-z_non_legendary_dragon = helper_functions.z_score(non_legendary_dragon_types[z_cols])
+z_non_legendary_flying = helper_functions.z_score(
+    non_legendary_flying_types[z_cols])
+z_non_legendary_dragon = helper_functions.z_score(
+    non_legendary_dragon_types[z_cols])
 # ------------------------------------------------------------------------------
 
 
 # --- Trimming Height Data ---------------------------------------------------------------------------
-h2 = heights[(heights > height_trim_low) & (heights < height_trim_high)]  # trimmed height
+h2 = heights[(heights > height_trim_low) & (
+    heights < height_trim_high)]  # trimmed height
 trim_data_h = helper_functions.trim_stats(num_pokemon, num_trim_h, "Pokemon", height_trim_low, height_trim_high,
                                           trimmed_height=True)
 # ---------------------------------------------------------------------------------------------------
@@ -705,7 +798,8 @@ n_dragon_type = len(dragon_types)
 dragon_heights_sorted = np.sort(dragon_type_height)
 d_cdf = scipy.stats.norm.cdf(dragon_heights_sorted)
 # non dragon types
-not_dragon_type = all_pokemon.loc[(all_pokemon['type_1'] != "Dragon") & (all_pokemon['type_2'] != "Dragon")]
+not_dragon_type = all_pokemon.loc[(all_pokemon['type_1'] != "Dragon") & (
+    all_pokemon['type_2'] != "Dragon")]
 not_dragon_type_height = not_dragon_type['height_m']
 not_dragon_type_weight = not_dragon_type['weight_kg']
 not_dragon_type_stat_values = not_dragon_type[cols[16:23]]
@@ -726,7 +820,8 @@ prob_w_stats = pd.Series(prob_w).describe()
 prob_h_d = (np.arange(len(dragon_type_height)) + 1) / len(dragon_type_height)
 prob_h_d_stats = pd.Series(prob_h_d).describe()
 # height prob non dragons
-prob_h_nd = (np.arange(len(not_dragon_type_height)) + 1) / len(not_dragon_type_height)
+prob_h_nd = (np.arange(len(not_dragon_type_height)) + 1) / \
+    len(not_dragon_type_height)
 prob_h_nd_stats = pd.Series(prob_h_nd).describe()
 
 # probabilities of trimmed height and weight
@@ -734,7 +829,8 @@ prob_h_nd_stats = pd.Series(prob_h_nd).describe()
 prob_h_trim = (np.arange(len(h2)) + 1) / len(h2)
 prob_h_trim_stats = pd.Series(prob_h_trim).describe()
 # weight
-prob_w_trim = (np.arange(len(pokemon_trimmed_weights[['weight_kg']])) + 1) / len(pokemon_trimmed_weights)
+prob_w_trim = (np.arange(
+    len(pokemon_trimmed_weights[['weight_kg']])) + 1) / len(pokemon_trimmed_weights)
 prob_w_trim_stats = pd.Series(prob_h_trim).describe()
 # --------------------------------------------------------------------------------------------------
 
@@ -742,11 +838,17 @@ prob_w_trim_stats = pd.Series(prob_h_trim).describe()
 # --- using different number of bins to display dragon/non dragon height dist --------------------------
 b_num = 10
 # data for dragons
-bin10_d, freq10_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num)
-bin20_d, freq20_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num * 2)
-bin30_d, freq30_d = helper_functions.my_hist_data(dragon_type_height, bins=b_num * 3)
+bin10_d, freq10_d = helper_functions.my_hist_data(
+    dragon_type_height, bins=b_num)
+bin20_d, freq20_d = helper_functions.my_hist_data(
+    dragon_type_height, bins=b_num * 2)
+bin30_d, freq30_d = helper_functions.my_hist_data(
+    dragon_type_height, bins=b_num * 3)
 # data for not dragons
-bin10_nd, freq10_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num)
-bin20_nd, freq20_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num * 2)
-bin30_nd, freq30_nd = helper_functions.my_hist_data(not_dragon_type_height, bins=b_num * 3)
+bin10_nd, freq10_nd = helper_functions.my_hist_data(
+    not_dragon_type_height, bins=b_num)
+bin20_nd, freq20_nd = helper_functions.my_hist_data(
+    not_dragon_type_height, bins=b_num * 2)
+bin30_nd, freq30_nd = helper_functions.my_hist_data(
+    not_dragon_type_height, bins=b_num * 3)
 # ------------------------------------------------------------------------------------------------------
