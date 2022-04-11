@@ -11,5 +11,5 @@ Analyzed data to find correlations between Pokémon types, stats, attributes, et
 ## Setup
 * import sklearn, numpy, pandas, and matplotlib (pip install these packages if the script fails to run)
 
-* ## analysis.py
+* ## analysis/analysis.py
   * Main driver of the program, run this file to start up the project
