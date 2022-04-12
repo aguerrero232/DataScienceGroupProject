@@ -1,5 +1,7 @@
 # DataScienceGroupProject
 
+![](https://projectpokemon.org/images/normal-sprite/megacharizardx.gif) ![](https://projectpokemon.org/images/normal-sprite/blaziken.gif) ![](https://projectpokemon.org/images/normal-sprite/tyranitar.gif) ![](https://projectpokemon.org/images/normal-sprite/darkrai.gif) ![](https://projectpokemon.org/images/normal-sprite/lucario.gif) ![](https://projectpokemon.org/images/normal-sprite/greninja.gif)
+
 ## Contributors
 Ariel Guerrero    
 Joshua Cherry   
