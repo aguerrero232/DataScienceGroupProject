@@ -1,6 +1,6 @@
 # DataScienceGroupProject
 
-![](https://projectpokemon.org/images/normal-sprite/suicune.gif) ![](https://projectpokemon.org/images/normal-sprite/noivern.gif) ![](https://projectpokemon.org/images/normal-sprite/infernape.gif) ![](https://projectpokemon.org/images/normal-sprite/arcanine.gif) ![](https://projectpokemon.org/images/normal-sprite/gliscor.gif) ![](https://projectpokemon.org/images/normal-sprite/dragonite.gif) 
+![](https://projectpokemon.org/images/normal-sprite/mew.gif) ![](https://projectpokemon.org/images/normal-sprite/celebi.gif) ![](https://projectpokemon.org/images/normal-sprite/jirachi.gif) ![](https://projectpokemon.org/images/normal-sprite/manaphy.gif) ![](https://projectpokemon.org/images/normal-sprite/victini.gif) ![](https://projectpokemon.org/images/normal-sprite/hoopa.gif) ![](https://projectpokemon.org/images/normal-sprite/marshadow.gif)
 
 ## Contributors
 Ariel Guerrero    
